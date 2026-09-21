@@ -1,0 +1,108 @@
+.section {
+  padding: 56px 24px 48px;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+  margin-bottom: 40px;
+}
+
+.logos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 22px 36px;
+  color: var(--color-text-dark);
+  width: 100%;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  user-select: none;
+  opacity: 0.88;
+}
+
+.logo svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.logo[data-brand='patreon'] {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.logo[data-brand='airbnb'] {
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+}
+
+.logo[data-brand='fiberplane'] {
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+.logo[data-brand='coinbase'] {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+}
+
+.logo[data-brand='griffin'] {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.logo[data-brand='helpscout'] {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.logo[data-brand='plaid'] {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 40px 20px 24px;
+  }
+
+  .stat {
+    font-size: 18px;
+  }
+
+  .logos {
+    gap: 14px 20px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+}

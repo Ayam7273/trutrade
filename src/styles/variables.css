@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'Moanslight';
+  src: url('/fonts/moanslight/moanslight-thin.otf') format('opentype'),
+       url('/fonts/moanslight/moanslight-thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moanslight';
+  src: url('/fonts/moanslight/moanslight-extralight.otf') format('opentype'),
+       url('/fonts/moanslight/moanslight-extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moanslight';
+  src: url('/fonts/moanslight/moanslight-light.otf') format('opentype'),
+       url('/fonts/moanslight/moanslight-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moanslight';
+  src: url('/fonts/moanslight/moanslight-regular.otf') format('opentype'),
+       url('/fonts/moanslight/moanslight-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moanslight';
+  src: url('/fonts/moanslight/moanslight-medium.otf') format('opentype'),
+       url('/fonts/moanslight/moanslight-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moanslight';
+  src: url('/fonts/moanslight/moanslight-semibold.otf') format('opentype'),
+       url('/fonts/moanslight/moanslight-semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moanslight';
+  src: url('/fonts/moanslight/moanslight-bold.otf') format('opentype'),
+       url('/fonts/moanslight/moanslight-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-navy-dark: #0F3D52;
+  --color-navy-darker: #16202B;
+  --color-teal-dark: #0E7C86;
+  --color-teal-mid: #2FB3AE;
+  --color-orange: #F5A623;
+  --color-orange-hover: #E0951A;
+  --color-bg-light: #FFFFFF;
+  --color-bg-offwhite: #FAFAFA;
+  --color-text-dark: #14181E;
+  --color-text-muted: #6B7280;
+  --color-text-inverse: #FFFFFF;
+  --color-border: #EEF0F3;
+  --color-card-border: #E6E8EC;
+  --color-error: #E24B4A;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --font-heading: 'Moanslight', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --container-max: 1160px;
+  --nav-max: 1240px;
+  --section-pad-y: 96px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background: var(--color-bg-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+a {
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal-mid);
+  outline-offset: 2px;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 88px;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  :root {
+    --section-pad-y: 56px;
+  }
+}
