@@ -7,6 +7,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
+    <>
+    <div className={styles.spacer} aria-hidden="true" />
     <header className={styles.header}>
       <div className={styles.inner}>
         <a href="/" className={styles.logo}>
@@ -63,5 +65,6 @@ export default function Navbar() {
         </nav>
       ) : null}
     </header>
+    </>
   );
 }

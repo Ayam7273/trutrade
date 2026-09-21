@@ -90,9 +90,9 @@
   justify-content: center;
 }
 
-.socialBtn svg {
-  width: 14px;
-  height: 14px;
+.socialBtn i {
+  font-size: 14px;
+  line-height: 1;
 }
 
 .socialBtn:hover {

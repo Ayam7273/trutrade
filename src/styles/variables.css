@@ -62,12 +62,15 @@
   --color-teal-mid: #2FB3AE;
   --color-orange: #F5A623;
   --color-orange-hover: #E0951A;
+  --color-orange-navbar: #E0951A;
+  --color-orange-navbar-hover: #C77F10;
   --color-bg-light: #FFFFFF;
   --color-bg-offwhite: #FAFAFA;
   --color-text-dark: #14181E;
   --color-text-muted: #6B7280;
   --color-text-inverse: #FFFFFF;
   --color-border: #EEF0F3;
+  --color-border-navbar: #B0B7C0;
   --color-card-border: #E6E8EC;
   --color-error: #E24B4A;
   --radius-sm: 8px;

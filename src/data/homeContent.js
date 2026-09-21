@@ -27,25 +27,35 @@ export const featuresContent = {
       title: 'Secure Escrow Payment',
       description:
         'Lock in funds until product is delivered, milestones, splits, and safety for both parties.',
+      icon: '/assets/icons/secure-escrow-payment.svg',
     },
     {
       id: 'wallet',
       title: 'Smart Multi-Currency Wallet',
       description:
         'Hold, receive, and withdraw payments in multiple currencies - securely and instantly.',
+      icon: '/assets/icons/smart-multi-currency-wallet.svg',
     },
     {
       id: 'marketplace',
       title: 'Marketplace Opportunities',
       description:
         'Find & buy product - all backed by secure escrow, verified users, and fast payouts.',
+      icon: '/assets/icons/marketplace-opportunities.svg',
     },
   ],
 };
 
 export const trustedByContent = {
   stat: 'Delivered 10,000+ transactions. Powering 1,000+ businesses.',
-  logos: ['Patreon', 'Airbnb', 'Fiberplane', 'Coinbase', 'Griffin', 'HelpScout', 'Plaid'],
+  logos: [
+    { src: '/assets/logos/Alvoice.webp', alt: 'Alvoice' },
+    { src: '/assets/logos/esusu-africa.webp', alt: 'Esusu Africa' },
+    { src: '/assets/logos/halalvest.webp', alt: 'Halalvest' },
+    { src: '/assets/logos/inclusionpay.webp', alt: 'InclusionPay' },
+    { src: '/assets/logos/PrefortConsult.webp', alt: 'Prefort Consult' },
+    { src: '/assets/logos/VeloRemit.webp', alt: 'VeloRemit' },
+  ],
 };
 
 export const infraContent = {
@@ -197,8 +207,8 @@ export const footerContent = {
   },
   copyright: 'Copyright ©2026 TruTrade',
   social: [
-    { id: 'facebook', label: 'Facebook' },
-    { id: 'twitter', label: 'Twitter' },
-    { id: 'instagram', label: 'Instagram' },
+    { id: 'facebook', label: 'Facebook', icon: 'fa-brands fa-facebook', href: '#' },
+    { id: 'twitter', label: 'Twitter/X', icon: 'fa-brands fa-x-twitter', href: '#' },
+    { id: 'instagram', label: 'Instagram', icon: 'fa-brands fa-instagram', href: '#' },
   ],
 };

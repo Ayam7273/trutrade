@@ -29,18 +29,12 @@
 }
 
 .icon {
-  display: inline-flex;
-  width: 20px;
-  height: 20px;
-  color: var(--color-orange);
+  display: block;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.icon svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+  margin-top: 1px;
+  object-fit: contain;
 }
 
 .title {

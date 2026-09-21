@@ -9,8 +9,9 @@
 }
 
 .stat {
+  font-family: var(--font-heading);
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--color-text-dark);
   margin-bottom: 40px;
@@ -23,70 +24,20 @@
   justify-content: center;
   align-items: center;
   gap: 22px 36px;
-  color: var(--color-text-dark);
   width: 100%;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  user-select: none;
-  opacity: 0.88;
+  justify-content: center;
 }
 
-.logo svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
-
-.logo[data-brand='patreon'] {
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.logo[data-brand='airbnb'] {
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: -0.04em;
-  text-transform: lowercase;
-}
-
-.logo[data-brand='fiberplane'] {
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: lowercase;
-}
-
-.logo[data-brand='coinbase'] {
-  font-weight: 500;
-  font-size: 20px;
-  letter-spacing: -0.04em;
-  text-transform: lowercase;
-}
-
-.logo[data-brand='griffin'] {
-  font-weight: 600;
-  font-size: 22px;
-}
-
-.logo[data-brand='helpscout'] {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.logo[data-brand='plaid'] {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 800;
+.logo img {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
 }
 
 @media (max-width: 767px) {
@@ -99,10 +50,11 @@
   }
 
   .logos {
-    gap: 14px 20px;
+    gap: 16px 24px;
   }
 
-  .logo {
-    font-size: 15px;
+  .logo img {
+    height: 32px;
+    max-width: 120px;
   }
 }
