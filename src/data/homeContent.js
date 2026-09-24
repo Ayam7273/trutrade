@@ -168,7 +168,7 @@ export const loopContent = {
 
 export const newsletterContent = {
   title: 'Join Our Newsletter Now',
-  body: 'Lorem ipsum dolor sit amet consectetur. In molestada iaculis aenean massa ornare leo sit commodo ornare.',
+  body: 'Stay updated with the latest insights, trade opportunities, and secure payment tips from TruTrade.',
   placeholder: 'Enter your email address',
   cta: 'Subscribe',
   emptyError: 'Please enter your email address.',
