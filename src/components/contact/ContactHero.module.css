@@ -1,0 +1,135 @@
+.section {
+  padding: 48px 24px 28px;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.inner h1 {
+  max-width: 680px;
+  margin-bottom: 16px;
+}
+
+.subtext {
+  max-width: 640px;
+  margin-bottom: 32px;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 12px;
+  align-items: center;
+  padding: 36px 20px 36px 40px;
+  background: var(--color-bg-offwhite);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.form {
+  max-width: 460px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid #d5dae2;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.field textarea {
+  min-height: 128px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #b0b6c0;
+}
+
+.error {
+  margin: 0;
+  color: var(--color-error);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.submit:hover {
+  background: var(--color-orange-hover);
+}
+
+.art {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.art img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 32px 16px 16px;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+    padding: 22px 16px 8px;
+  }
+
+  .form {
+    max-width: none;
+  }
+
+  .art {
+    justify-content: center;
+  }
+
+  .art img {
+    max-width: 100%;
+    max-height: 240px;
+    margin-right: 0;
+  }
+}

@@ -15,7 +15,7 @@ export default function Navbar() {
 
   function classFor(link, base) {
     const href = hrefFor(link);
-    const active = href === '/store' && pathname === '/store';
+    const active = href === pathname;
     return active ? `${base} ${styles.active}` : base;
   }
 
