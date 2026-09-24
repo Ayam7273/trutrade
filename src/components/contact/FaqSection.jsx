@@ -3,7 +3,10 @@ import { Minus, Plus } from 'lucide-react';
 import { faqContent } from '../../data/contactContent';
 import styles from './FaqSection.module.css';
 
-export default function FaqSection() {
+export default function FaqSection({
+  title = faqContent.title,
+  items = faqContent.items,
+}) {
   const [openIndex, setOpenIndex] = useState(0);
 
   function toggle(index) {
@@ -13,9 +16,9 @@ export default function FaqSection() {
   return (
     <section className={styles.section} aria-labelledby="faq-heading">
       <div className={styles.inner}>
-        <h2 id="faq-heading">{faqContent.title}</h2>
+        <h2 id="faq-heading">{title}</h2>
         <div className={styles.list}>
-          {faqContent.items.map((item, index) => {
+          {items.map((item, index) => {
             const open = openIndex === index;
             const panelId = `faq-panel-${item.number}`;
             return (

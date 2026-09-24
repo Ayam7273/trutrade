@@ -1,0 +1,21 @@
+.section {
+  padding: 48px 24px 16px;
+}
+
+.list {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 28px 16px 8px;
+  }
+
+  .list {
+    gap: 36px;
+  }
+}

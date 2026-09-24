@@ -5,7 +5,7 @@ export const navContent = {
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Store', href: '/store' },
-    { label: 'Blogs', href: '#blog' },
+    { label: 'Blogs', href: '/blogs' },
     { label: 'Contact', href: '/contact' },
   ],
   login: 'Log in',
