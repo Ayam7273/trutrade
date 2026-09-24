@@ -3,8 +3,10 @@ import { Star } from 'lucide-react';
 import { testimonialsContent } from '../../data/homeContent';
 import styles from './TestimonialsCarousel.module.css';
 
-export default function TestimonialsCarousel() {
-  const items = testimonialsContent.items;
+export default function TestimonialsCarousel({
+  showHeader = true,
+  items = testimonialsContent.items,
+}) {
   const [active, setActive] = useState(1);
   const count = items.length;
 
@@ -32,10 +34,19 @@ export default function TestimonialsCarousel() {
   ];
 
   return (
-    <section className={styles.section} aria-labelledby="testimonials-heading">
+    <section
+      className={`${styles.section} ${showHeader ? '' : styles.embedded}`}
+      {...(showHeader
+        ? { 'aria-labelledby': 'testimonials-heading' }
+        : { 'aria-label': 'Testimonials' })}
+    >
       <div className={styles.inner}>
-        <h2 id="testimonials-heading">{testimonialsContent.title}</h2>
-        <p className={styles.subtext}>{testimonialsContent.subtext}</p>
+        {showHeader ? (
+          <>
+            <h2 id="testimonials-heading">{testimonialsContent.title}</h2>
+            <p className={styles.subtext}>{testimonialsContent.subtext}</p>
+          </>
+        ) : null}
 
         <div className={styles.stage} onKeyDown={handleKeyDown}>
           <div className={styles.track} aria-live="polite">

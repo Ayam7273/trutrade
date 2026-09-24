@@ -72,6 +72,12 @@
   --color-border: #EEF0F3;
   --color-border-navbar: #B0B7C0;
   --color-card-border: #E6E8EC;
+  --color-card-light-bg: #FAFAFA;
+  --color-card-light-border: #14181E;
+  --color-badge-light-bg: #FFFFFF;
+  --color-badge-light-text: #14181E;
+  --color-badge-teal-bg: #2FB3AE;
+  --color-badge-teal-text: #FFFFFF;
   --color-error: #E24B4A;
   --radius-sm: 8px;
   --radius-md: 16px;

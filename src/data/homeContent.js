@@ -4,7 +4,7 @@ export const navContent = {
   links: [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Store', href: '#store' },
+    { label: 'Store', href: '/store' },
     { label: 'Blogs', href: '#blog' },
     { label: 'Contact', href: '#contact' },
   ],

@@ -1,0 +1,169 @@
+.section {
+  padding: 72px 24px 32px;
+}
+
+.grid {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.intro {
+  padding: 8px 12px 0 0;
+}
+
+.intro h2 {
+  max-width: 420px;
+  margin-bottom: 18px;
+}
+
+.intro p {
+  max-width: 420px;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 8px;
+  align-items: center;
+  min-height: 240px;
+  padding: 24px 22px 22px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.featured {
+  min-height: 320px;
+}
+
+.card.navy {
+  background: var(--color-navy-dark);
+  color: var(--color-text-inverse);
+}
+
+.card.teal {
+  background: var(--color-teal-mid);
+  color: var(--color-text-inverse);
+}
+
+.card.light {
+  background: var(--color-card-light-bg);
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-card-light-border);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+  min-width: 0;
+}
+
+.pillBadge {
+  display: inline-block;
+  margin: 0;
+  max-width: 190px;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.pillBadge.light {
+  background: var(--color-badge-light-bg);
+  color: var(--color-badge-light-text);
+}
+
+.pillBadge.teal {
+  background: var(--color-badge-teal-bg);
+  color: var(--color-badge-teal-text);
+}
+
+.card.navy p,
+.card.teal p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.card.light p {
+  color: var(--color-text-dark);
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.art img {
+  width: 100%;
+  max-height: 190px;
+  object-fit: contain;
+}
+
+.featured .art {
+  min-height: 200px;
+}
+
+.featured .art img {
+  max-height: 240px;
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr 0.85fr;
+    min-height: 220px;
+    padding: 20px 16px;
+  }
+
+  .pillBadge {
+    font-size: 16px;
+    max-width: 160px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 40px 16px 8px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .intro {
+    padding: 0;
+  }
+
+  .card,
+  .featured {
+    min-height: 0;
+  }
+
+  .art,
+  .featured .art {
+    min-height: 120px;
+  }
+
+  .art img,
+  .featured .art img {
+    max-height: 140px;
+  }
+}

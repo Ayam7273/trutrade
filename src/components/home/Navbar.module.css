@@ -57,6 +57,10 @@
   color: var(--color-orange);
 }
 
+.active {
+  color: var(--color-orange);
+}
+
 .desktopActions {
   display: flex;
   align-items: center;
@@ -161,7 +165,8 @@
     color: var(--color-text-dark);
   }
 
-  .mobileLink:hover {
+  .mobileLink:hover,
+  .mobileLink.active {
     color: var(--color-orange);
   }
 

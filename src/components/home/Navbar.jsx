@@ -1,10 +1,23 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { navContent } from '../../data/homeContent';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  function hrefFor(link) {
+    if (pathname !== '/' && link.href.startsWith('#')) return `/${link.href}`;
+    return link.href;
+  }
+
+  function classFor(link, base) {
+    const href = hrefFor(link);
+    const active = href === '/store' && pathname === '/store';
+    return active ? `${base} ${styles.active}` : base;
+  }
 
   return (
     <>
@@ -16,11 +29,22 @@ export default function Navbar() {
         </a>
 
         <nav className={styles.desktopNav} aria-label="Primary">
-          {navContent.links.map((link) => (
-            <a key={link.label} href={link.href} className={styles.navLink}>
-              {link.label}
-            </a>
-          ))}
+          {navContent.links.map((link) => {
+            const href = hrefFor(link);
+            const className = classFor(link, styles.navLink);
+            if (href.startsWith('/') && !href.includes('#')) {
+              return (
+                <Link key={link.label} to={href} className={className}>
+                  {link.label}
+                </Link>
+              );
+            }
+            return (
+              <a key={link.label} href={href} className={className}>
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className={styles.desktopActions}>
@@ -46,16 +70,32 @@ export default function Navbar() {
 
       {open ? (
         <nav id="mobile-nav" className={styles.mobileNav} aria-label="Mobile">
-          {navContent.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={styles.mobileLink}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navContent.links.map((link) => {
+            const href = hrefFor(link);
+            const className = classFor(link, styles.mobileLink);
+            if (href.startsWith('/') && !href.includes('#')) {
+              return (
+                <Link
+                  key={link.label}
+                  to={href}
+                  className={className}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+            return (
+              <a
+                key={link.label}
+                href={href}
+                className={className}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            );
+          })}
           <a href="#login" className={styles.mobileLink} onClick={() => setOpen(false)}>
             {navContent.login}
           </a>
