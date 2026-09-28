@@ -1,0 +1,29 @@
+.badge {
+  display: inline-block;
+  flex-shrink: 0;
+  margin: 0;
+  max-width: 190px;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.light {
+  background: var(--color-badge-light-bg);
+  color: var(--color-badge-light-text);
+}
+
+.teal {
+  background: var(--color-badge-teal-bg);
+  color: var(--color-badge-teal-text);
+}
+
+@media (max-width: 900px) {
+  .badge {
+    font-size: 16px;
+    max-width: 160px;
+    padding: 8px 12px;
+  }
+}

@@ -2,8 +2,8 @@ export const navContent = {
   logoSrc: '/assets/logos/trutrade-logo-no-bg.png',
   logoAlt: 'TruTrade',
   links: [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
     { label: 'Store', href: '/store' },
     { label: 'Blogs', href: '/blogs' },
     { label: 'Contact', href: '/contact' },

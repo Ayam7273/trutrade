@@ -68,27 +68,6 @@
   min-width: 0;
 }
 
-.pillBadge {
-  display: inline-block;
-  margin: 0;
-  max-width: 190px;
-  padding: 10px 16px;
-  border-radius: var(--radius-pill);
-  font-size: 18px;
-  line-height: 1.25;
-  font-weight: 600;
-}
-
-.pillBadge.light {
-  background: var(--color-badge-light-bg);
-  color: var(--color-badge-light-text);
-}
-
-.pillBadge.teal {
-  background: var(--color-badge-teal-bg);
-  color: var(--color-badge-teal-text);
-}
-
 .card.navy p,
 .card.teal p {
   color: rgba(255, 255, 255, 0.92);
@@ -129,12 +108,6 @@
     grid-template-columns: 1fr 0.85fr;
     min-height: 220px;
     padding: 20px 16px;
-  }
-
-  .pillBadge {
-    font-size: 16px;
-    max-width: 160px;
-    padding: 8px 12px;
   }
 }
 

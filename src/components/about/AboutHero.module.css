@@ -1,0 +1,32 @@
+.section {
+  padding: 56px 24px 8px;
+}
+
+.inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inner h1 {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.subtext {
+  margin: 18px auto 0;
+  max-width: 680px;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 36px 16px 4px;
+  }
+
+  .subtext {
+    font-size: 15px;
+  }
+}

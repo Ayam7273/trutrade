@@ -1,5 +1,5 @@
 .section {
-  padding: 56px 24px 88px;
+  padding: 24px 24px 88px;
 }
 
 .inner {
@@ -14,6 +14,10 @@
   margin-bottom: 28px;
 }
 
+.header h2 {
+  max-width: 240px;
+}
+
 .header p {
   max-width: 520px;
   color: var(--color-text-muted);
@@ -23,7 +27,7 @@
 
 @media (max-width: 767px) {
   .section {
-    padding: 40px 16px 56px;
+    padding: 16px 16px 56px;
   }
 
   .header {

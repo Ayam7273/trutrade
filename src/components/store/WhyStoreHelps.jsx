@@ -1,4 +1,5 @@
 import { whyStoreContent } from '../../data/storeContent';
+import PillBadge from '../shared/PillBadge.jsx';
 import styles from './WhyStoreHelps.module.css';
 
 export default function WhyStoreHelps() {
@@ -16,7 +17,7 @@ export default function WhyStoreHelps() {
             className={`${styles.card} ${styles[card.tone]}${card.featured ? ` ${styles.featured}` : ''}`}
           >
             <div className={styles.copy}>
-              <h3 className={`${styles.pillBadge} ${styles[card.badge]}`}>{card.title}</h3>
+              <PillBadge variant={card.badge}>{card.title}</PillBadge>
               <p>{card.body}</p>
             </div>
             <div className={styles.art}>

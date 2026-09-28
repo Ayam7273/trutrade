@@ -1,4 +1,5 @@
 import { essentialsContent } from '../../data/storeContent';
+import PillBadge from '../shared/PillBadge.jsx';
 import styles from './EssentialsSection.module.css';
 
 export default function EssentialsSection() {
@@ -6,9 +7,9 @@ export default function EssentialsSection() {
     <section className={styles.section} aria-labelledby="essentials-heading">
       <div className={styles.inner}>
         <div className={styles.header}>
-          <h2 id="essentials-heading" className={`${styles.pillBadge} ${styles.teal}`}>
+          <PillBadge id="essentials-heading" tag="h2" variant="teal">
             {essentialsContent.badge}
-          </h2>
+          </PillBadge>
           <p>{essentialsContent.body}</p>
         </div>
 
