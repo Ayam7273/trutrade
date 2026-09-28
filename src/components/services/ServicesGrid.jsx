@@ -25,14 +25,14 @@ export default function ServicesGrid() {
           {servicesGridContent.cards.map((card) => {
             const Icon = ICONS[card.icon];
             return (
-              <article key={card.id} className={`${styles.card} ${styles[card.tone]}`}>
-                <div className={`${styles.iconWrap} ${styles[card.iconTone]}`} aria-hidden="true">
-                  <Icon size={22} strokeWidth={2} />
+              <article key={card.id} className={styles.card}>
+                <div className={styles.heading}>
+                  <div className={styles.iconWrap} aria-hidden="true">
+                    <Icon size={22} strokeWidth={2} />
+                  </div>
+                  <PillBadge variant="light">{card.title}</PillBadge>
                 </div>
-                <div className={styles.copy}>
-                  <PillBadge variant={card.badge}>{card.title}</PillBadge>
-                  <p>{card.body}</p>
-                </div>
+                <p>{card.body}</p>
               </article>
             );
           })}
