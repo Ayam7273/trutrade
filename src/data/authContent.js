@@ -41,4 +41,5 @@ export const signUpContent = {
   passwordError: 'Password must be at least 8 characters.',
   confirmRequiredError: 'Please confirm your password.',
   confirmMatchError: 'Passwords do not match.',
+  confirmMessage: 'Check your email to confirm your account before signing in.',
 };

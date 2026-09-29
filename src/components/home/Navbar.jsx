@@ -48,12 +48,12 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.desktopActions}>
-          <a href="#login" className={styles.login}>
+          <Link to="/login" className={styles.login}>
             {navContent.login}
-          </a>
-          <a href="#signup" className={styles.signup}>
+          </Link>
+          <Link to="/signup" className={styles.signup}>
             {navContent.signup}
-          </a>
+          </Link>
         </div>
 
         <button
@@ -96,12 +96,12 @@ export default function Navbar() {
               </a>
             );
           })}
-          <a href="#login" className={styles.mobileLink} onClick={() => setOpen(false)}>
+          <Link to="/login" className={styles.mobileLink} onClick={() => setOpen(false)}>
             {navContent.login}
-          </a>
-          <a href="#signup" className={styles.mobileSignup} onClick={() => setOpen(false)}>
+          </Link>
+          <Link to="/signup" className={styles.mobileSignup} onClick={() => setOpen(false)}>
             {navContent.signup}
-          </a>
+          </Link>
         </nav>
       ) : null}
     </header>

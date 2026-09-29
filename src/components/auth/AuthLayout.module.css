@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: stretch;
+  margin-bottom: 80px;
 }
 
 .formPane {
@@ -26,19 +27,18 @@
 }
 
 .bannerPane {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
   background: var(--color-auth-panel-bg);
 }
 
 .bannerPane img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 640px;
-  height: auto;
-  max-height: min(760px, calc(100vh - 160px));
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
 }
 
 @media (max-width: 899px) {

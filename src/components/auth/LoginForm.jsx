@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { loginContent } from '../../data/authContent';
+import { signInWithEmail, signInWithGoogle } from '../../lib/supabaseAuth';
 import GoogleIcon from './GoogleIcon.jsx';
 import styles from './LoginForm.module.css';
 
@@ -8,6 +9,8 @@ export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [formError, setFormError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   function clearError(field) {
     setErrors((current) => {
@@ -18,12 +21,20 @@ export default function LoginForm() {
     });
   }
 
-  function handleGoogleClick() {
-    // TODO: wire to supabase.auth.signInWithOAuth({ provider: 'google' })
-    console.log({ provider: 'google' });
+  async function handleGoogleClick() {
+    setFormError('');
+    setSubmitting(true);
+    try {
+      const { error } = await signInWithGoogle();
+      if (error) setFormError(error.message);
+    } catch (err) {
+      setFormError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const nextErrors = {};
     const trimmedEmail = email.trim();
@@ -36,10 +47,23 @@ export default function LoginForm() {
     }
 
     setErrors(nextErrors);
+    setFormError('');
     if (Object.keys(nextErrors).length > 0) return;
 
-    // TODO: wire to supabase.auth.signInWithPassword({ email, password })
-    console.log({ email: trimmedEmail, password });
+    setSubmitting(true);
+    try {
+      const { data, error } = await signInWithEmail({ email: trimmedEmail, password });
+      if (error) {
+        setFormError(error.message);
+        return;
+      }
+      // TODO: redirect to the user's dashboard once that route exists
+      console.log(data);
+    } catch (err) {
+      setFormError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -47,7 +71,7 @@ export default function LoginForm() {
       <p className={styles.eyebrow}>{loginContent.eyebrow}</p>
       <h1>{loginContent.title}</h1>
 
-      <button type="button" className={styles.google} onClick={handleGoogleClick}>
+      <button type="button" className={styles.google} onClick={handleGoogleClick} disabled={submitting}>
         <GoogleIcon />
         {loginContent.google}
       </button>
@@ -105,7 +129,13 @@ export default function LoginForm() {
           ) : null}
         </div>
 
-        <button type="submit" className={styles.submit}>
+        {formError ? (
+          <p className={styles.formError} role="alert">
+            {formError}
+          </p>
+        ) : null}
+
+        <button type="submit" className={styles.submit} disabled={submitting}>
           {loginContent.submit}
         </button>
       </form>

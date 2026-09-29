@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signUpContent } from '../../data/authContent';
+import { signUpWithEmail } from '../../lib/supabaseAuth';
 import styles from './SignUpForm.module.css';
 
 export default function SignUpForm() {
@@ -11,6 +12,9 @@ export default function SignUpForm() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [formError, setFormError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
 
   function clearError(field) {
     setErrors((current) => {
@@ -21,7 +25,7 @@ export default function SignUpForm() {
     });
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const nextErrors = {};
     const trimmedFirst = firstName.trim();
@@ -43,20 +47,28 @@ export default function SignUpForm() {
     }
 
     setErrors(nextErrors);
+    setFormError('');
     if (Object.keys(nextErrors).length > 0) return;
 
-    // TODO: wire to supabase.auth.signUp({ email, password, options: { data: { first_name, last_name, phone } } })
-    console.log({
-      email: trimmedEmail,
-      password,
-      options: {
-        data: {
-          first_name: trimmedFirst,
-          last_name: trimmedLast,
-          phone: trimmedPhone,
-        },
-      },
-    });
+    setSubmitting(true);
+    try {
+      const { error } = await signUpWithEmail({
+        email: trimmedEmail,
+        password,
+        firstName: trimmedFirst,
+        lastName: trimmedLast,
+        phone: trimmedPhone,
+      });
+      if (error) {
+        setFormError(error.message);
+        return;
+      }
+      setConfirmed(true);
+    } catch (err) {
+      setFormError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -64,6 +76,11 @@ export default function SignUpForm() {
       <p className={styles.eyebrow}>{signUpContent.eyebrow}</p>
       <h1>{signUpContent.title}</h1>
 
+      {confirmed ? (
+        <p className={styles.confirm} role="status">
+          {signUpContent.confirmMessage}
+        </p>
+      ) : (
       <form onSubmit={handleSubmit} noValidate>
         <div className={styles.nameRow}>
           <div className={styles.field}>
@@ -211,10 +228,17 @@ export default function SignUpForm() {
           ) : null}
         </div>
 
-        <button type="submit" className={styles.submit}>
+        {formError ? (
+          <p className={styles.formError} role="alert">
+            {formError}
+          </p>
+        ) : null}
+
+        <button type="submit" className={styles.submit} disabled={submitting}>
           {signUpContent.submit}
         </button>
       </form>
+      )}
 
       <p className={styles.switch}>
         {signUpContent.footerPrompt}{' '}

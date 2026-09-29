@@ -1,4 +1,5 @@
 import Footer from '../home/Footer.jsx';
+import Navbar from '../home/Navbar.jsx';
 import styles from './AuthLayout.module.css';
 
 const BANNER_SRC = '/assets/images/signin-signup-banner.png';
@@ -6,6 +7,7 @@ const BANNER_SRC = '/assets/images/signin-signup-banner.png';
 export default function AuthLayout({ children }) {
   return (
     <div className={styles.page}>
+      <Navbar />
       <div className={styles.split}>
         <main className={styles.formPane}>
           <div className={styles.formInner}>{children}</div>
