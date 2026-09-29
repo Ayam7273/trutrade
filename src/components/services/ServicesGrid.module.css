@@ -47,6 +47,11 @@
   color: white;
 }
 
+.title {
+  min-width: 0;
+  color: var(--color-text-inverse);
+}
+
 .iconWrap {
   display: flex;
   align-items: center;

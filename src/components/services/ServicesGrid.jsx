@@ -1,6 +1,5 @@
 import { BadgeCheck, BarChart3, Lock, Scale, Store, Wallet } from 'lucide-react';
 import { servicesGridContent } from '../../data/servicesContent';
-import PillBadge from '../shared/PillBadge.jsx';
 import styles from './ServicesGrid.module.css';
 
 const ICONS = {
@@ -30,7 +29,7 @@ export default function ServicesGrid() {
                   <div className={styles.iconWrap} aria-hidden="true">
                     <Icon size={22} strokeWidth={2} />
                   </div>
-                  <PillBadge variant="light">{card.title}</PillBadge>
+                  <h3 className={styles.title}>{card.title}</h3>
                 </div>
                 <p>{card.body}</p>
               </article>
