@@ -24,10 +24,12 @@ export default function ValuesGrid() {
             const Icon = ICONS[item.icon];
             return (
               <article key={item.title} className={styles.card}>
-                <div className={`${styles.iconWrap} ${styles[item.iconTone]}`} aria-hidden="true">
-                  <Icon size={22} strokeWidth={2} />
+                <div className={styles.cardHeader}>
+                  <div className={`${styles.iconWrap} ${styles[item.iconTone]}`} aria-hidden="true">
+                    <Icon size={22} strokeWidth={2} />
+                  </div>
+                  <h3>{item.title}</h3>
                 </div>
-                <h3>{item.title}</h3>
                 <p>{item.body}</p>
               </article>
             );

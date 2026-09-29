@@ -7,11 +7,11 @@ export const aboutStatsContent = {
   items: [
     { value: '10,000+', label: 'Transactions Secured' },
     { value: '1,000+', label: 'Businesses Onboarded' },
-    { value: '2', label: 'Countries, One Corridor' },
-    { value: '£30,000', label: 'Payment Transactions Secured' },
+    { value: '£30,000', label: 'Payment Secured' },
   ],
   footnote: '*When funds are held in escrow through TruTrade.',
 };
+
 
 export const aboutMissionContent = {
   badge: '01',
