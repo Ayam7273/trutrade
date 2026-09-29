@@ -1,0 +1,97 @@
+.form h1 {
+  margin: 6px 0 28px;
+}
+
+.eyebrow {
+  color: var(--color-orange);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.nameRow .field {
+  margin-bottom: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-dark);
+}
+
+.field input {
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-input-bg);
+  color: var(--color-text-dark);
+  padding: 14px 16px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.field input::placeholder {
+  color: var(--color-input-placeholder);
+}
+
+.error {
+  margin: 0;
+  color: var(--color-error);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 8px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit:hover {
+  background: var(--color-orange-hover);
+}
+
+.switch {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.switch a {
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.switch a:hover {
+  color: var(--color-teal-dark);
+}
+
+@media (max-width: 480px) {
+  .nameRow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

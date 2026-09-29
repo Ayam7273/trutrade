@@ -78,6 +78,9 @@
   --color-badge-light-text: #14181E;
   --color-badge-teal-bg: #2FB3AE;
   --color-badge-teal-text: #FFFFFF;
+  --color-input-bg: #F1F3F6; /* filled input background, Login/SignUp only */
+  --color-input-placeholder: #9CA3AF;
+  --color-auth-panel-bg: #F5F6F8; /* right-side banner panel background */
   --color-error: #E24B4A;
   --radius-sm: 8px;
   --radius-md: 16px;

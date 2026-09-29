@@ -5,6 +5,8 @@ import Services from './pages/Services.jsx';
 import Store from './pages/Store.jsx';
 import Contact from './pages/Contact.jsx';
 import Blog from './pages/Blog.jsx';
+import Login from './pages/Login.jsx';
+import SignUp from './pages/SignUp.jsx';
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
         <Route path="/store" element={<Store />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blog />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
