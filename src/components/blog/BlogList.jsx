@@ -7,7 +7,7 @@ export default function BlogList() {
     <section className={styles.section} aria-label="Blog posts">
       <div className={styles.list}>
         {blogPosts.map((post) => (
-          <BlogPostRow key={post.number} post={post} />
+          <BlogPostRow key={post.title} post={post} />
         ))}
       </div>
     </section>

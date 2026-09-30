@@ -33,7 +33,7 @@ export const featuresContent = {
       id: 'wallet',
       title: 'Smart Multi-Currency Wallet',
       description:
-        'Hold, receive, and withdraw payments in multiple currencies - securely and instantly.',
+        'Hold, receive, and withdraw payments in multiple currencies from one wallet.',
       icon: '/assets/icons/smart-multi-currency-wallet.svg',
     },
     {
@@ -43,18 +43,6 @@ export const featuresContent = {
         'Find & buy product - all backed by secure escrow, verified users, and fast payouts.',
       icon: '/assets/icons/marketplace-opportunities.svg',
     },
-  ],
-};
-
-export const trustedByContent = {
-  stat: 'Delivered 10,000+ transactions. Powering 1,000+ businesses.',
-  logos: [
-    { src: '/assets/logos/Alvoice.webp', alt: 'Alvoice' },
-    { src: '/assets/logos/esusu-africa.webp', alt: 'Esusu Africa' },
-    { src: '/assets/logos/halalvest.webp', alt: 'Halalvest' },
-    { src: '/assets/logos/inclusionpay.webp', alt: 'InclusionPay' },
-    { src: '/assets/logos/PrefortConsult.webp', alt: 'Prefort Consult' },
-    { src: '/assets/logos/VeloRemit.webp', alt: 'VeloRemit' },
   ],
 };
 
@@ -68,92 +56,39 @@ export const infraContent = {
 
 export const activityContent = {
   badge: '02',
-  title: 'Trade, E-commerce, Businesss',
-  body: "You focus on making bold moves - we'll handle the trust, security, and payouts behind every transaction.",
+  title: 'Trade and ecommerce, with more certainty',
+  body: 'Keep transaction terms, escrow payments, and delivery confirmation connected in one flow.',
   image: '/assets/images/homepage-img2.png',
   imageAlt: 'Mobile widget showing recent paid and received escrow activity.',
 };
 
-export const testimonialsContent = {
-  title: 'Why Buyers & Sellers Trust Us?',
-  subtext:
-    'Discover why sellers & buyers rely on trutrade to secure their business transactions.',
-  prevAria: 'Previous testimonial',
-  nextAria: 'Next testimonial',
-  arrowLeft: '/assets/icons/Arrow left.svg',
-  arrowRight: '/assets/icons/Arrow right.svg',
-  items: [
-    {
-      id: 1,
-      quote:
-        'Funds stay locked until delivery is confirmed. That peace of mind is why we run every UK–NG shipment through TruTrade escrow.',
-      name: 'Adaeze Nwosu',
-      role: 'Lagos Seller',
-      rating: 5,
-    },
-    {
-      id: 2,
-      quote:
-        'Funds stay locked until delivery is confirmed. That peace of mind is why we run every UK–NG shipment through TruTrade escrow.',
-      name: 'John Smith',
-      role: 'Nigerian Buyer',
-      rating: 5,
-    },
-    {
-      id: 3,
-      quote:
-        'Funds stay locked until delivery is confirmed. That peace of mind is why we run every UK–NG shipment through TruTrade escrow.',
-      name: 'John Smith',
-      role: 'UK Merchant',
-      rating: 5,
-    },
-    {
-      id: 4,
-      quote:
-        'Funds stay locked until delivery is confirmed. That peace of mind is why we run every UK–NG shipment through TruTrade escrow.',
-      name: 'Amira Bello',
-      role: 'Import Partner',
-      rating: 5,
-    },
-    {
-      id: 5,
-      quote:
-        'Funds stay locked until delivery is confirmed. That peace of mind is why we run every UK–NG shipment through TruTrade escrow.',
-      name: 'Daniel Okoye',
-      role: 'Marketplace Operator',
-      rating: 5,
-    },
-  ],
-};
-
 export const blogContent = {
-  title: 'Blog & Articles',
+  title: 'Practical guides for safer trade',
   intro:
-    'Lorem ipsum dolor sit amet consectetur. Et rhoncus nisl enim accumsan. Et eu risus viverra elit id vitae aliquet sed tellus.',
-  viewAll: 'View all posts',
-  readMore: 'Read More',
-  diagonalArrow: '/assets/icons/diagonal arrow.svg',
+    'Understand escrow, agree clear transaction terms, and keep useful records for cross-border orders.',
+  viewAll: 'Explore all guides',
+  viewAllHref: '/blogs',
   posts: [
     {
       id: 1,
-      tags: ['Tags', 'Tags'],
-      title: 'The Art of Designing Timeless Masterpieces',
+      tags: ['Escrow basics'],
+      title: 'How escrow protects a cross-border transaction',
       excerpt:
-        'Dive into the realm of timeless creativity as we explore the techniques and inspirations behind crafting visually stunning and timeless designs that captivate hearts and minds.',
+        'Agree the amount, delivery terms, and confirmation steps before funding. Escrow holds the money while the seller completes the agreed work.',
     },
     {
       id: 2,
-      tags: ['Tags', 'Tags'],
-      title: 'Stay Ahead of the Curve in the Visual World',
+      tags: ['Trade checklist'],
+      title: 'What to agree before funding a transaction',
       excerpt:
-        'Discover the secrets of designing impactful brand experiences that leave a lasting impression on your audience, forging deep connections and driving brand loyalty.',
+        'Set out what is being sold, the price and currency, delivery method, timeline, and how both sides will confirm completion.',
     },
     {
       id: 3,
-      tags: ['Tags', 'Tags'],
-      title: 'Crafting Emotionally Engaging User Experiences',
+      tags: ['Cross-border trade'],
+      title: 'Keep a clear record of an international order',
       excerpt:
-        'Discover the secrets of designing impactful brand experiences that leave a lasting impression on your audience, forging deep connections and driving brand loyalty.',
+        'Keep the agreed terms, payment record, delivery updates, and confirmation together so both parties can track progress.',
     },
   ],
 };
@@ -161,7 +96,7 @@ export const blogContent = {
 export const loopContent = {
   title: 'Keep everyone in the loop',
   subtext:
-    'We keep both parties in the loop with our support and dispute setting, making sure no one is cheated or scammed',
+    'Keep both parties aligned on the transaction terms, delivery progress, and confirmation needed before funds are released.',
   image: '/assets/images/homepage-img3.png',
   imageAlt: 'Dispute dashboard showing in-progress and completed cases for both parties.',
 };
@@ -180,35 +115,21 @@ export const footerContent = {
   logoSrc: '/assets/logos/trutrade-logo-no-bg.png',
   logoAlt: 'TruTrade',
   tagline:
-    'Lorem ipsum dolor sit amet consectetur. Sed pretium nisl rhoncus nisl et eros.',
+    'Escrow payments for UK-Nigeria trade, with funds held until agreed transaction terms are met.',
   columns: [
     {
       title: 'Quick Links',
       links: [
-        { label: 'About', href: '#about' },
-        { label: 'Services', href: '#services' },
-        { label: 'Blogs', href: '#blog' },
-        { label: 'Contact', href: '#contact' },
-      ],
-    },
-    {
-      title: 'Legal',
-      links: [
-        { label: 'Privacy Policy', href: '#privacy' },
-        { label: 'Safeguarding', href: '#safeguarding' },
-        { label: 'Code of Conduct', href: '#conduct' },
-        { label: 'Acceptable Use', href: '#acceptable-use' },
+        { label: 'About', href: '/about' },
+        { label: 'Services', href: '/services' },
+        { label: 'Guides', href: '/blogs' },
+        { label: 'Contact', href: '/contact' },
       ],
     },
   ],
-  address: {
-    title: 'Address',
-    lines: ['10, Esomo Close Off', 'Toyin Street Opebi,', 'Ikeja, Lagos, Nigeria.'],
+  market: {
+    title: 'Trade Corridor',
+    value: 'United Kingdom and Nigeria',
   },
   copyright: 'Copyright ©2026 TruTrade',
-  social: [
-    { id: 'facebook', label: 'Facebook', icon: 'fa-brands fa-facebook', href: '#' },
-    { id: 'twitter', label: 'Twitter/X', icon: 'fa-brands fa-x-twitter', href: '#' },
-    { id: 'instagram', label: 'Instagram', icon: 'fa-brands fa-instagram', href: '#' },
-  ],
 };

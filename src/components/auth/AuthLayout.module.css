@@ -27,18 +27,19 @@
 }
 
 .bannerPane {
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
   background: var(--color-auth-panel-bg);
 }
 
 .bannerPane img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
+  max-width: 560px;
+  height: min(68vh, 560px);
+  object-fit: contain;
+  object-position: center;
 }
 
 @media (max-width: 899px) {

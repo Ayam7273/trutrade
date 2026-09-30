@@ -6,7 +6,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+  grid-template-columns: 1.5fr 0.8fr 1fr;
   gap: 40px;
   padding-bottom: 56px;
 }
@@ -32,11 +32,10 @@
 }
 
 .inner a,
-.inner address {
+.market {
   color: var(--color-text-dark);
   font-size: 14px;
   line-height: 1.7;
-  font-style: normal;
 }
 
 .inner h3 {
@@ -71,32 +70,6 @@
 .bottom p {
   font-size: 13px;
   color: var(--color-text-muted);
-}
-
-.social {
-  display: flex;
-  gap: 10px;
-}
-
-.socialBtn {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--color-bg-light);
-  color: var(--color-orange);
-  border: 1px solid var(--color-card-border);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.socialBtn i {
-  font-size: 14px;
-  line-height: 1;
-}
-
-.socialBtn:hover {
-  border-color: var(--color-orange);
 }
 
 @media (max-width: 767px) {

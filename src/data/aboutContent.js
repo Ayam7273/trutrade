@@ -3,16 +3,6 @@ export const aboutHeroContent = {
   body: "TruTrade exists because trade between the UK and Nigeria deserved more than a leap of faith. We're the layer of certainty that lets buyers and sellers do business without ever wondering who moves first.",
 };
 
-export const aboutStatsContent = {
-  items: [
-    { value: '10,000+', label: 'Transactions Secured' },
-    { value: '1,000+', label: 'Businesses Onboarded' },
-    { value: '£30,000', label: 'Payment Secured' },
-  ],
-  footnote: '*When funds are held in escrow through TruTrade.',
-};
-
-
 export const aboutMissionContent = {
   badge: '01',
   title: 'Why We Started TruTrade',
@@ -59,7 +49,7 @@ export const aboutValuesContent = {
 
 export const aboutCtaContent = {
   title: 'Ready to Transact with Certainty?',
-  body: 'Join the businesses already transacting without the guesswork.',
+  body: 'Create an account to set up your first protected transaction.',
   cta: 'Get Started',
-  ctaHref: '#signup',
+  ctaHref: '/signup',
 };

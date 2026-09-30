@@ -1,7 +1,6 @@
 import Navbar from '../components/home/Navbar.jsx';
 import Footer from '../components/home/Footer.jsx';
 import AboutHero from '../components/about/AboutHero.jsx';
-import StatsRow from '../components/about/StatsRow.jsx';
 import MissionSection from '../components/about/MissionSection.jsx';
 import ValuesGrid from '../components/about/ValuesGrid.jsx';
 import CtaBanner from '../components/about/CtaBanner.jsx';
@@ -13,7 +12,6 @@ export default function About() {
       <Navbar />
       <main>
         <AboutHero />
-        <StatsRow />
         <MissionSection />
         <ValuesGrid />
         <CtaBanner

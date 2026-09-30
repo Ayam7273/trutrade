@@ -1,6 +1,6 @@
 export const contactHeroContent = {
   titleLines: ['Get in touch with us.', "We're here to assist you."],
-  body: 'Lorem ipsum dolor sit amet consectetur. Ut rhoncus sagittis nisi consectetur. Aliquam condimentum in sit sed a sodales risus.',
+  body: 'Have a question about an account or a trade? Describe what you need help with using the form below.',
   image: '/assets/images/contact-page-hero-img.png',
   nameLabel: 'Name',
   namePlaceholder: 'Name',
@@ -14,24 +14,9 @@ export const contactHeroContent = {
 };
 
 export const contactInfoContent = {
-  label: 'Contact Info',
-  title: 'Lorem ipsum dolor sit amet consectetur.',
-  channels: [
-    {
-      id: 'email',
-      title: 'Email Address',
-      value: 'help@info.com',
-      href: 'mailto:help@info.com',
-      hours: 'Assistance hours: Monday - Friday 6 am to 8 pm EST',
-    },
-    {
-      id: 'phone',
-      title: 'Number',
-      value: '(808) 998-34256',
-      href: 'tel:+180899834256',
-      hours: 'Assistance hours: Monday - Friday 6 am to 8 pm EST',
-    },
-  ],
+  label: 'Before you get in touch',
+  title: 'A few details can help clarify a transaction question.',
+  body: 'Include the transaction reference, what you expected to happen, and what happened instead. Never include your password, one-time codes, or full payment-card details.',
 };
 
 export const faqContent = {
@@ -39,39 +24,39 @@ export const faqContent = {
   items: [
     {
       number: '01',
-      question: 'Question 1',
+      question: 'How does escrow protect a transaction?',
       answer:
-        'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+        'The buyer and seller agree on the transaction terms first. The buyer funds the escrow, and the money stays held until delivery is confirmed against those terms.',
     },
     {
       number: '02',
-      question: 'Question 2',
+      question: 'When is payment released to the seller?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
+        'Payment is released after the buyer confirms that the agreed goods or services have been delivered. If there is a disagreement, the transaction can be reviewed through the dispute process.',
     },
     {
       number: '03',
-      question: 'Question 3',
+      question: 'What should both sides agree before funding?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.',
+        'Confirm what is being sold, the amount and currency, delivery method and timing, and how completion will be confirmed. Clear terms make expectations easier to check.',
     },
     {
       number: '04',
-      question: 'Question 4',
+      question: 'Does TruTrade arrange shipping?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.',
+        'Buyers and sellers arrange delivery directly and should include the delivery terms in their agreement. TruTrade provides the escrow payment flow for the transaction.',
     },
     {
       number: '05',
-      question: 'Question 5',
+      question: 'Which currencies can I use?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
+        'TruTrade is designed for UK-Nigeria trade and supports GBP, NGN, and USD in its multi-currency wallet.',
     },
     {
       number: '06',
-      question: 'Question 6',
+      question: 'What happens if a transaction is disputed?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare.',
+        'The buyer and seller can provide information about the agreed terms and what happened. TruTrade describes its dispute process as a neutral review before funds are released.',
     },
   ],
 };

@@ -91,11 +91,6 @@ export const howItWorksContent = {
   ],
 };
 
-export const servicesTestimonialsContent = {
-  badge: 'Trusted by Traders',
-  body: 'See how businesses across the UK-Nigeria corridor use TruTrade to trade with confidence.',
-};
-
 export const servicesCtaContent = {
   title: 'Start Transacting Smarter',
   body: 'Every service, one platform, zero guesswork.',

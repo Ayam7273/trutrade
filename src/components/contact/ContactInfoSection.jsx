@@ -8,17 +8,7 @@ export default function ContactInfoSection() {
         <div className={styles.intro}>
           <p className={styles.label}>{contactInfoContent.label}</p>
           <h2 id="contact-info-heading">{contactInfoContent.title}</h2>
-        </div>
-
-        <div className={styles.channels}>
-          {contactInfoContent.channels.map((channel) => (
-            <article key={channel.id}>
-              <h3>{channel.title}</h3>
-              <span className={styles.rule} aria-hidden="true" />
-              <a href={channel.href}>{channel.value}</a>
-              <p>{channel.hours}</p>
-            </article>
-          ))}
+          <p className={styles.body}>{contactInfoContent.body}</p>
         </div>
       </div>
     </section>

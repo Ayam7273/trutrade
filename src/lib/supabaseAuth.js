@@ -12,7 +12,7 @@
  *    http://localhost:5173 for local dev) to "Redirect URLs", or Google
  *    sign-in will fail after the redirect back from Google.
  */
-import { supabase } from './supabaseClient';
+import { requireSupabase } from './supabaseClient';
 
 /**
  * Creates a new account with email + password, storing extra profile
@@ -21,7 +21,7 @@ import { supabase } from './supabaseClient';
  * user in the calling component rather than assuming an instant session.
  */
 export async function signUpWithEmail({ email, password, firstName, lastName, phone }) {
-  const { data, error } = await supabase.auth.signUp({
+  const { data, error } = await requireSupabase().auth.signUp({
     email,
     password,
     options: {
@@ -39,7 +39,7 @@ export async function signUpWithEmail({ email, password, firstName, lastName, ph
  * Signs in an existing user with email + password.
  */
 export async function signInWithEmail({ email, password }) {
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const { data, error } = await requireSupabase().auth.signInWithPassword({
     email,
     password,
   });
@@ -57,7 +57,7 @@ export async function signInWithEmail({ email, password }) {
  * correct across local dev and whatever domain the app is deployed to.
  */
 export async function signInWithGoogle() {
-  const { data, error } = await supabase.auth.signInWithOAuth({
+  const { data, error } = await requireSupabase().auth.signInWithOAuth({
     provider: 'google',
     options: {
       redirectTo: `${window.location.origin}/`,
@@ -70,7 +70,7 @@ export async function signInWithGoogle() {
  * Signs the current user out.
  */
 export async function signOut() {
-  const { error } = await supabase.auth.signOut();
+  const { error } = await requireSupabase().auth.signOut();
   return { error };
 }
 
@@ -79,7 +79,7 @@ export async function signOut() {
  * protected-route checks on app load.
  */
 export async function getCurrentSession() {
-  const { data, error } = await supabase.auth.getSession();
+  const { data, error } = await requireSupabase().auth.getSession();
   return { session: data?.session ?? null, error };
 }
 
@@ -94,6 +94,6 @@ export async function getCurrentSession() {
  *   }, []);
  */
 export function onAuthStateChange(callback) {
-  const { data: { subscription } } = supabase.auth.onAuthStateChange(callback);
+  const { data: { subscription } } = requireSupabase().auth.onAuthStateChange(callback);
   return { unsubscribe: () => subscription.unsubscribe() };
 }

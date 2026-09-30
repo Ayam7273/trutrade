@@ -26,27 +26,13 @@ export default function Footer() {
         ))}
 
         <div>
-          <h3>{footerContent.address.title}</h3>
-          <address>
-            {footerContent.address.lines.map((line) => (
-              <span key={line}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </address>
+          <h3>{footerContent.market.title}</h3>
+          <p className={styles.market}>{footerContent.market.value}</p>
         </div>
       </div>
 
       <div className={styles.bottom}>
         <p>{footerContent.copyright}</p>
-        <div className={styles.social}>
-          {footerContent.social.map((item) => (
-            <a key={item.id} href={item.href} aria-label={item.label} className={styles.socialBtn}>
-              <i className={item.icon} aria-hidden="true" />
-            </a>
-          ))}
-        </div>
       </div>
     </footer>
   );

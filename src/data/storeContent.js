@@ -1,6 +1,6 @@
 export const storeHeroContent = {
   title: 'Start Selling Online in Just Minutes',
-  body: 'Create a professional online store for your business, showcase your products with detailed information and pricing, and start selling with secure payments and a seamless checkout experience. Give your customers an easy and convenient way to discover, browse, and purchase your products from anywhere.',
+  body: 'Create a storefront, list products with clear details and pricing, and share it with customers. Connect product orders to TruTrade’s escrow payment flow.',
   cta: 'Create Store',
   ctaHref: '#signup',
   image: '/assets/images/store-page-hero-img.png',
@@ -9,12 +9,12 @@ export const storeHeroContent = {
 
 export const whyStoreContent = {
   title: 'Why Our Store Helps You Sell More',
-  body: 'Create your ecommerce store on our platform with a secure payment and instant checkout feature, your store page or product links can be shared to your customers on social media platforms',
+  body: 'Create a storefront and share product links through the channels your customers use. Keep product details, orders, and payment activity connected.',
   cards: [
     {
       id: 'launch',
       title: 'Launch Your Store',
-      body: 'No hassle, no skills required - your store goes live as soon as you upload your products',
+      body: 'Add product details and publish a storefront customers can browse.',
       image: '/assets/images/launch-your-store-img.png',
       imageAlt: 'Illustration of a storefront window with a smile, hearts, and a five-star rating.',
       tone: 'navy',
@@ -23,8 +23,8 @@ export const whyStoreContent = {
     },
     {
       id: 'seo',
-      title: 'Search Engine Optimization',
-      body: 'Our store is optimized to appear in Google search results, helping you reach wider audience.',
+      title: 'Clear Product Listings',
+      body: 'Add names, descriptions, images, and prices so customers can understand what you offer.',
       image: '/assets/images/search-engine-optimization-img.png',
       imageAlt: 'Illustration of a magnifying glass over a connected network and globe.',
       tone: 'light',
@@ -32,8 +32,8 @@ export const whyStoreContent = {
     },
     {
       id: 'payments',
-      title: 'Fast Payments & Orders',
-      body: 'Receive fast and secure payment as soon as customers check out, no delays.',
+      title: 'Protected Checkout',
+      body: 'Connect customer orders to an escrow payment flow tied to the transaction terms.',
       image: '/assets/images/fast-payment-n-orders-img.png',
       imageAlt: 'Illustration of a cursor clicking a checkout button in a browser window.',
       tone: 'teal',
@@ -41,7 +41,7 @@ export const whyStoreContent = {
     },
     {
       id: 'share',
-      title: 'Shareable Store Front',
+      title: 'Shareable Storefront',
       body: 'Share your product link on WhatsApp, Facebook or any platform your customers use.',
       image: '/assets/images/sharable-store-front-img.png',
       imageAlt: 'Illustration of overlapping browser windows representing a shareable storefront.',
@@ -51,7 +51,7 @@ export const whyStoreContent = {
     {
       id: 'analytics',
       title: 'Analytics & Tracking',
-      body: 'Our store gives you access to real-time tracking of your product sales and funds',
+      body: 'Review sales, orders, and transaction activity from your store dashboard.',
       image: '/assets/images/analytics-n-tracking-img.png',
       imageAlt: 'Illustration of charts, a pie graph, and analytics windows.',
       tone: 'navy',
@@ -62,24 +62,19 @@ export const whyStoreContent = {
 
 export const essentialsContent = {
   badge: 'Essentials',
-  body: 'We have put in place features to help you run your online store stress and hassle free.',
+  body: 'Tools to help you organize products, transactions, and store activity.',
   items: [
     {
       title: 'Product Listing',
-      body: 'List and showcase as many product you want, add product details; Name, Image, Description and Price then publish your product listing.',
+      body: 'Add a product name, image, description, and price, then publish the listing in your storefront.',
     },
     {
       title: 'Secured Payments',
-      body: 'Lorem ipsum dolor sit amet consectetur. Sed mauris consequat sollicitudin purus facilisi enim consectetur diam facilisi.',
+      body: 'Funds remain in escrow until the agreed delivery or service conditions are met and completion is confirmed.',
     },
     {
       title: 'Real Time Insight',
       body: 'Track sales performance, monitor transactions, and make informed decisions with intuitive, data-driven reports',
     },
   ],
-};
-
-export const storeTestimonialsContent = {
-  badge: 'Testimonials',
-  body: 'Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Services',
 };

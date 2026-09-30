@@ -22,21 +22,12 @@ export default function BlogPreview() {
               </div>
               <h3>{post.title}</h3>
               <p>{post.excerpt}</p>
-              <a href={`#post-${post.id}`} className={styles.readMore}>
-                {blogContent.readMore}
-                <img
-                  src={blogContent.diagonalArrow}
-                  alt=""
-                  aria-hidden="true"
-                  className={styles.arrow}
-                />
-              </a>
             </article>
           ))}
         </div>
 
         <div className={styles.ctaWrap}>
-          <a href="#blog" className={styles.cta}>
+          <a href={blogContent.viewAllHref} className={styles.cta}>
             {blogContent.viewAll}
           </a>
         </div>
