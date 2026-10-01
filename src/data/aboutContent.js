@@ -6,7 +6,7 @@ export const aboutHeroContent = {
 export const aboutMissionContent = {
   badge: '01',
   title: 'Why We Started TruTrade',
-  body: "Cross-border trade between the UK and Nigeria has always run on relationships — and on trust that isn't always earned yet. A seller ships before seeing a naira or a pound land in their account. A buyer pays and hopes the goods show up as promised. TruTrade removes the hope from that equation. We hold funds securely until both sides deliver on their end, so trade can move at the speed of opportunity instead of the speed of suspicion.",
+  body: "Cross-border trade between the UK and Nigeria has always run on relationships - and on trust that isn't always earned yet. A seller ships before seeing a naira or a pound land in their account. A buyer pays and hopes the goods show up as promised. TruTrade removes the hope from that equation. We hold funds securely until both sides deliver on their end, so trade can move at the speed of opportunity instead of the speed of suspicion.",
   promiseTitle: 'Our Promise',
   promises: [
     'Funds held until delivery is confirmed',
@@ -24,7 +24,7 @@ export const aboutValuesContent = {
       icon: 'Shield',
       iconTone: 'teal',
       title: 'Security First',
-      body: 'Every naira and pound that passes through TruTrade sits in escrow until both parties confirm the deal is done — no exceptions.',
+      body: 'Every naira and pound that passes through TruTrade sits in escrow until both parties confirm the deal is done - no exceptions.',
     },
     {
       icon: 'Globe',

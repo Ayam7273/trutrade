@@ -10,7 +10,7 @@ export const servicesGridContent = {
     {
       id: 'escrow',
       title: 'Secure Escrow Payments',
-      body: 'Funds are held safely until both sides confirm the deal — buyers stay protected, sellers stay paid.',
+      body: 'Funds are held safely until both sides confirm the deal - buyers stay protected, sellers stay paid.',
       icon: 'Lock',
       tone: 'navy',
       badge: 'light',
@@ -71,12 +71,12 @@ export const howItWorksContent = {
     {
       number: '01',
       title: 'Create & Verify',
-      body: "Sign up and verify your identity in minutes — it's the first layer of trust for every transaction.",
+      body: "Sign up and verify your identity in minutes - it's the first layer of trust for every transaction.",
     },
     {
       number: '02',
       title: 'Fund the Escrow',
-      body: "Buyer deposits payment into TruTrade's secure escrow — funds are locked, not released, until terms are met.",
+      body: "Buyer deposits payment into TruTrade's secure escrow - funds are locked, not released, until terms are met.",
     },
     {
       number: '03',
@@ -86,9 +86,14 @@ export const howItWorksContent = {
     {
       number: '04',
       title: 'Release Payment',
-      body: 'Once confirmed, funds release to the seller instantly — no chasing, no waiting on wire transfers.',
+      body: 'Once confirmed, funds release to the seller instantly - no chasing, no waiting on wire transfers.',
     },
   ],
+};
+
+export const servicesTestimonialsContent = {
+  badge: 'Trusted by Traders',
+  body: 'See how businesses across the UK-Nigeria corridor use TruTrade to trade with confidence.',
 };
 
 export const servicesCtaContent = {

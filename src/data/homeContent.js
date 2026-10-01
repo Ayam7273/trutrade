@@ -62,6 +62,58 @@ export const activityContent = {
   imageAlt: 'Mobile widget showing recent paid and received escrow activity.',
 };
 
+export const testimonialsContent = {
+  title: 'Why Buyers & Sellers Trust Us?',
+  subtext:
+    'Discover why sellers & buyers rely on trutrade to secure their business transactions.',
+  prevAria: 'Previous testimonial',
+  nextAria: 'Next testimonial',
+  arrowLeft: '/assets/icons/Arrow left.svg',
+  arrowRight: '/assets/icons/Arrow right.svg',
+  items: [
+    {
+      id: 1,
+      quote:
+        'Funds stay locked until delivery is confirmed. That peace of mind is why we trust TruTrade for every UK–NG shipment.',
+      name: 'Adaeze Nwosu',
+      role: 'Nigerian Seller',
+      rating: 5,
+    },
+    {
+      id: 2,
+      quote:
+        'Payment remains protected until every order arrives. That certainty is why we choose TruTrade for every UK–NG transaction.',
+      name: 'John Smith',
+      role: 'UK Seller',
+      rating: 5,
+    },
+    {
+      id: 3,
+      quote:
+        'The buyer’s funds are secured until completion. That confidence keeps our UK–NG trade moving smoothly with TruTrade everywhere.',
+      name: 'Jason Kenny',
+      role: 'UK Buyer',
+      rating: 5,
+    },
+    {
+      id: 4,
+      quote:
+        'Money is released after results are checked. That assurance is why we trust TruTrade to protect UK–NG deals.',
+      name: 'Amira Bello',
+      role: 'Nigerian Seller',
+      rating: 5,
+    },
+    {
+      id: 5,
+      quote:
+        'Escrow keeps every step accountable until delivery. That reliability is why our UK–NG team chooses TruTrade for payments.',
+      name: 'Daniel Okoye',
+      role: 'UK Seller',
+      rating: 5,
+    },
+  ],
+};
+
 export const blogContent = {
   title: 'Practical guides for safer trade',
   intro:

@@ -78,3 +78,8 @@ export const essentialsContent = {
     },
   ],
 };
+
+export const storeTestimonialsContent = {
+  badge: 'Testimonials',
+  body: 'Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Services',
+};
