@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginContent } from '../../data/authContent';
-import { signInWithEmail, signInWithGoogle } from '../../lib/supabaseAuth';
+import { useAuth } from '../../contexts/AuthContext';
+import { signInAndCheckVerification, signInWithGoogle } from '../../lib/supabaseAuth';
 import GoogleIcon from './GoogleIcon.jsx';
 import styles from './LoginForm.module.css';
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+  const { refreshProfile } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -52,13 +55,14 @@ export default function LoginForm() {
 
     setSubmitting(true);
     try {
-      const { data, error } = await signInWithEmail({ email: trimmedEmail, password });
+      const { profile, error } = await signInAndCheckVerification({ email: trimmedEmail, password });
       if (error) {
         setFormError(error.message);
         return;
       }
-      // TODO: redirect to the user's dashboard once that route exists
-      console.log(data);
+      const nextProfile = await refreshProfile();
+      const role = nextProfile?.role ?? profile?.role;
+      navigate(role === 'seller' ? '/dashboard' : '/marketplace');
     } catch (err) {
       setFormError(err.message || 'Something went wrong. Please try again.');
     } finally {

@@ -12,6 +12,7 @@
  *    http://localhost:5173 for local dev) to "Redirect URLs", or Google
  *    sign-in will fail after the redirect back from Google.
  */
+import { getMyProfile } from './profile';
 import { requireSupabase } from './supabaseClient';
 
 /**
@@ -44,6 +45,30 @@ export async function signInWithEmail({ email, password }) {
     password,
   });
   return { data, error };
+}
+
+/**
+ * Signs in, then checks verification status. If the user isn't verified,
+ * signs them back out immediately and returns a specific error so the
+ * Login page can show "please verify your account" rather than a
+ * generic auth failure.
+ */
+export async function signInAndCheckVerification({ email, password }) {
+  const { data, error } = await signInWithEmail({ email, password });
+  if (error) return { data: null, profile: null, error };
+
+  const { profile } = await getMyProfile();
+
+  if (!profile || profile.verification_status !== 'verified') {
+    await signOut();
+    return {
+      data: null,
+      profile: null,
+      error: { message: 'Please verify your account before logging in.' },
+    };
+  }
+
+  return { data, profile, error: null };
 }
 
 /**
