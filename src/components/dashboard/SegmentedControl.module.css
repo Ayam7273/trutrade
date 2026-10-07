@@ -1,0 +1,74 @@
+.group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.option {
+  padding: 7px var(--space-4);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.option:hover {
+  color: var(--color-text-dark);
+}
+
+.pill {
+  padding: var(--space-1);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+}
+
+.pill .selected {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-weight: 600;
+  box-shadow: var(--shadow-card);
+}
+
+.plain .option {
+  padding: 5px var(--space-3);
+  font-size: 13px;
+}
+
+.plain .selected {
+  background: var(--color-teal-bg);
+  color: var(--color-teal-dark);
+  font-weight: 600;
+}
+
+.chips {
+  gap: var(--space-3);
+}
+
+.chips .option {
+  padding: 8px var(--space-4);
+  background: var(--color-surface);
+  color: var(--color-text-dark);
+  font-size: 15px;
+}
+
+.chips .option:hover {
+  background: var(--color-track);
+}
+
+.chips .selected,
+.chips .selected:hover {
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .option {
+    padding: 6px var(--space-3);
+    font-size: 13px;
+  }
+}

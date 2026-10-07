@@ -1,0 +1,29 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.row dt {
+  color: var(--color-text-muted);
+}
+
+.row dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.row .amount {
+  color: var(--color-success);
+  font-family: var(--font-heading);
+  font-size: 22px;
+}

@@ -1,0 +1,30 @@
+.switch {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-text-muted);
+  transition: background-color 0.15s ease;
+}
+
+.on {
+  background: var(--color-chart-green);
+}
+
+.thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-light);
+  transition: left 0.15s ease;
+}
+
+.on .thumb {
+  left: 24px;
+}

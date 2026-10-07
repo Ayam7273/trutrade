@@ -1,0 +1,50 @@
+.panel {
+  min-width: 0;
+  padding: var(--space-6);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.heading {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.subtitle {
+  margin-top: var(--space-1);
+}
+
+.action {
+  flex-shrink: 0;
+}
+
+/* Text link style for "View all" actions in panel headers */
+.action a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-orange-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.action a:hover {
+  color: var(--color-orange-navbar-hover);
+}
+
+@media (max-width: 767px) {
+  .panel {
+    padding: var(--space-4);
+  }
+}

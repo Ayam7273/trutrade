@@ -1,0 +1,90 @@
+/* The sidebar is position: fixed rather than sticky, which sidesteps the
+   html/body overflow-x: hidden issue that stops sticky from working
+   (DESIGN_PRINCIPLES.md 5.6). */
+
+.layout {
+  min-height: 100vh;
+  background: var(--color-dashboard-bg);
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-width);
+  z-index: 30;
+  transition: transform 0.2s ease;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  min-width: 0;
+  transition: margin-left 0.2s ease;
+}
+
+.collapsed .sidebar {
+  transform: translateX(-100%);
+}
+
+.collapsed .main {
+  margin-left: 0;
+}
+
+.content {
+  padding: var(--space-2) var(--space-8) var(--space-8);
+  max-width: 1400px;
+}
+
+/* Dashboard type scale: smaller than the marketing h1/h2 in variables.css */
+.layout h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.layout h2 {
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.layout h3 {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.scrim {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sidebar,
+  .collapsed .sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-card);
+  }
+
+  .mobileOpen .sidebar {
+    transform: translateX(0);
+  }
+
+  .main,
+  .collapsed .main {
+    margin-left: 0;
+  }
+
+  .scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: var(--color-scrim);
+  }
+
+  .content {
+    padding: var(--space-2) var(--space-4) var(--space-6);
+  }
+
+  .layout h1 {
+    font-size: 22px;
+  }
+}

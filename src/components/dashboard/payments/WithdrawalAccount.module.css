@@ -1,0 +1,10 @@
+.bank {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.holder {
+  margin-bottom: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: 15px;
+}

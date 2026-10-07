@@ -1,0 +1,15 @@
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.logoTitle {
+  font-weight: 600;
+}
+
+.logoHint {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}

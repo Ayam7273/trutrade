@@ -1,0 +1,8 @@
+.view {
+  color: var(--color-orange-text);
+  font-weight: 600;
+}
+
+.view:hover {
+  color: var(--color-orange-navbar-hover);
+}

@@ -1,0 +1,253 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.available {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-sm);
+  background: var(--color-success-bg);
+}
+
+.availableLabel {
+  color: var(--color-success);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.availableValue {
+  color: var(--color-success);
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.affix {
+  position: relative;
+}
+
+.prefix {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.affix .amountInput {
+  padding-left: 36px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.quick {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: calc(var(--space-2) * -1);
+}
+
+.quickButton {
+  padding: 6px var(--space-4);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quickButton:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange-text);
+}
+
+.destination {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.destinationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page .destinationTitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+.link {
+  color: var(--color-orange-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.link:hover {
+  color: var(--color-orange-navbar-hover);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+}
+
+.bankIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-info-bg);
+  color: var(--color-chart-blue);
+}
+
+.accountText {
+  flex: 1;
+  min-width: 0;
+}
+
+.bank {
+  font-weight: 600;
+}
+
+.holder {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.warning {
+  color: var(--color-warning);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.cancel {
+  padding: 0 var(--space-2);
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.cancel:hover {
+  color: var(--color-text-dark);
+}
+
+.reviewTitle:focus {
+  outline: none;
+}
+
+.reviewAmount {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.reviewBody {
+  color: var(--color-text-muted);
+}
+
+.reviewNote {
+  font-size: 14px;
+}
+
+.error {
+  color: var(--color-error-text);
+  font-weight: 500;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: 15px;
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.summary dt {
+  color: var(--color-text-muted);
+}
+
+.summary dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.free {
+  color: var(--color-success);
+}
+
+.receive {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.summary .receive dt {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: var(--space-4);
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+  }
+}

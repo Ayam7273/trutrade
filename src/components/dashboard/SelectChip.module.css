@@ -1,0 +1,57 @@
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+}
+
+.chip:focus-within {
+  outline: 2px solid var(--color-teal-mid);
+  outline-offset: 2px;
+}
+
+.outline {
+  border: 1px solid var(--color-card-border);
+  background: var(--color-bg-light);
+}
+
+.filled {
+  border: 1px solid transparent;
+  background: var(--color-surface);
+}
+
+.prefix {
+  padding-left: var(--space-4);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.chip select {
+  appearance: none;
+  padding: 10px 36px 10px 6px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip select:focus-visible {
+  outline: none;
+}
+
+.icon {
+  position: absolute;
+  right: var(--space-3);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .chip select {
+    flex: 1;
+  }
+}

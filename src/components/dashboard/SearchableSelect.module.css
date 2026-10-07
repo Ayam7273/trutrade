@@ -1,0 +1,167 @@
+.wrapper {
+  position: relative;
+}
+
+/* Matches the look of the shared .select control in FormField.module.css */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  padding: 12px var(--space-4);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.trigger[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.trigger[aria-expanded='true'] {
+  border-color: var(--color-orange);
+}
+
+.value {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.triggerIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.placeholder {
+  color: var(--color-input-placeholder);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: transform 0.15s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-light);
+  box-shadow: var(--shadow-card);
+}
+
+.searchRow {
+  position: relative;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.searchIcon {
+  position: absolute;
+  left: calc(var(--space-3) + 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.search {
+  width: 100%;
+  padding: 10px var(--space-4) 10px 42px;
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-offwhite);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+.search::placeholder {
+  color: var(--color-input-placeholder);
+}
+
+.list {
+  list-style: none;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: var(--space-1) 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 12px var(--space-5);
+  cursor: pointer;
+}
+
+.active {
+  background: var(--color-surface);
+}
+
+.selected,
+.selected.active {
+  background: var(--color-orange-bg);
+  color: var(--color-orange-text);
+  font-weight: 500;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-offwhite);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.label {
+  flex: 1;
+  min-width: 0;
+}
+
+.check {
+  flex-shrink: 0;
+  color: var(--color-orange);
+}
+
+.empty {
+  padding: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .list {
+    max-height: 280px;
+  }
+
+  .option {
+    padding: 10px var(--space-4);
+  }
+}

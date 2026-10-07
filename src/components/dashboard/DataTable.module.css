@@ -1,0 +1,77 @@
+/* Tables scroll inside their own wrapper on small screens instead of
+   squashing columns (DESIGN_PRINCIPLES.md 5.6). */
+.scroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.caption {
+  text-align: left;
+  padding-bottom: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.table th {
+  padding: var(--space-3);
+  background: var(--color-bg-offwhite);
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table th:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.table th:last-child {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.table td {
+  padding: var(--space-5) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.end {
+  text-align: right;
+}
+
+.table th.end {
+  text-align: right;
+}
+
+.emphasis {
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.state {
+  padding: var(--space-8) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-offwhite);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+.stateError {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}

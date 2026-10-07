@@ -1,0 +1,24 @@
+.rating {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.star {
+  position: relative;
+  display: inline-flex;
+}
+
+.filled {
+  color: var(--color-orange);
+  fill: var(--color-orange);
+}
+
+.empty {
+  color: var(--color-orange);
+  fill: none;
+}
+
+.half {
+  position: absolute;
+  inset: 0;
+}

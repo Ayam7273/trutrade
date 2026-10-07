@@ -1,0 +1,224 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.message {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.message:empty {
+  display: none;
+}
+
+.error {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.count {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.lines {
+  list-style: none;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.line:first-child {
+  padding-top: 0;
+}
+
+.thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.lineText {
+  flex: 1;
+  min-width: 0;
+}
+
+.lineName {
+  font-weight: 600;
+}
+
+.lineName:hover {
+  color: var(--color-orange-text);
+}
+
+.lineMeta {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.lineTotal {
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: 15px;
+}
+
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.totals dt {
+  color: var(--color-text-muted);
+}
+
+.grandTotal {
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  font-weight: 700;
+}
+
+.totals .grandTotal dt {
+  color: var(--color-text-dark);
+}
+
+.nextText {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+.shipForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-offwhite);
+}
+
+.page .shipTitle {
+  font-size: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.formButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.paymentAmount {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.paymentBody {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.textLink {
+  display: inline-block;
+  margin-top: var(--space-3);
+  color: var(--color-orange-text);
+  font-weight: 600;
+}
+
+.textLink:hover {
+  color: var(--color-orange-navbar-hover);
+}
+
+.customerName {
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: 15px;
+}
+
+.info dt {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.info dd {
+  overflow-wrap: anywhere;
+}
+
+.info a:hover {
+  color: var(--color-orange-text);
+}
+
+.address {
+  font-style: normal;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

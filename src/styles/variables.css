@@ -82,6 +82,53 @@
   --color-input-placeholder: #9CA3AF;
   --color-auth-panel-bg: #F5F6F8; /* right-side banner panel background */
   --color-error: #E24B4A;
+
+  /* Status pairs (text + tinted background), dashboard badges and alerts */
+  --color-success: #15803D;
+  --color-success-bg: #E3F7EA;
+  --color-warning: #A16207;
+  --color-warning-bg: #FEF3C7;
+  --color-info: #1D4ED8;
+  --color-info-bg: #E5EEFE;
+  --color-accent: #6D28D9;
+  --color-accent-bg: #EFE9FE;
+  --color-error-text: #B42318;
+  --color-error-bg: #FDECEC;
+
+  /* Chart series, dashboard only */
+  --color-chart-orange: #F5A623;
+  --color-chart-blue: #3B82F6;
+  --color-chart-purple: #8B5CF6;
+  --color-chart-green: #10B981;
+  --color-chart-red: #EF4444;
+  --color-chart-teal-fade: rgba(47, 179, 174, 0.06);
+
+  /* Surfaces and lines */
+  --color-surface: #F3F4F6;
+  --color-border-input: #CFD6DF;
+  --color-dashboard-bg: #F8F9FB;
+  --color-track: #E9EBEF;
+  --color-teal-bg: #E3F5F4;
+  --color-banner-a: #8FD8D2; /* placeholder banner stripes until a seller uploads one */
+  --color-banner-b: #B3E6E2;
+  --color-scrim: rgba(20, 24, 30, 0.4);
+  --color-orange-text: #A86200; /* orange that passes contrast as link text on white */
+  --color-orange-bg: #FFF4E8; /* light orange tint for selected rows */
+
+  /* Spacing and elevation */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --shadow-card: 0 8px 30px rgba(20, 24, 30, 0.06);
+
+  /* Dashboard layout */
+  --sidebar-width: 260px;
+  --topbar-height: 88px;
+
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;

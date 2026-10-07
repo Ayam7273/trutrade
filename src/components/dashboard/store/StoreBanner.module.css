@@ -1,0 +1,35 @@
+.banner {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.md {
+  height: 96px;
+  border-radius: var(--radius-sm);
+}
+
+.lg {
+  height: 180px;
+  border-radius: var(--radius-sm);
+}
+
+.sm {
+  height: 56px;
+}
+
+.placeholder {
+  background-color: var(--color-banner-b);
+  background-image:
+    repeating-linear-gradient(
+      120deg,
+      var(--color-banner-a) 0 14px,
+      transparent 14px 34px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      transparent 0 40px,
+      var(--color-banner-a) 40px 48px,
+      transparent 48px 80px
+    );
+}

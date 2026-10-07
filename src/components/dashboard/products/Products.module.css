@@ -1,0 +1,24 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.saved {
+  margin: calc(var(--space-4) * -1) 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.saved:empty {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .page {
+    gap: var(--space-6);
+  }
+}
