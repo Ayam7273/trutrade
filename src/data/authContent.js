@@ -8,11 +8,50 @@ export const loginContent = {
   passwordLabel: 'Password',
   passwordPlaceholder: 'Password',
   submit: 'Login',
+  forgot: 'Forgot password?',
+  forgotHref: '/forgot-password',
+  resend: 'Resend confirmation email',
+  resendSent: 'Confirmation email sent. Check your inbox (and spam).',
   footerPrompt: "Don't have an account?",
   footerLink: 'Register',
   footerHref: '/signup',
   emailError: 'Please enter a valid email address.',
   passwordError: 'Please enter your password.',
+};
+
+export const forgotPasswordContent = {
+  eyebrow: 'Reset password',
+  title: 'Forgot your password?',
+  intro: 'Enter the email you signed up with and we’ll send you a link to set a new password.',
+  emailLabel: 'Email Address',
+  emailPlaceholder: 'Email Address',
+  submit: 'Send reset link',
+  submitting: 'Sending…',
+  sent: 'If an account exists for that email, a reset link is on its way. Check your inbox and spam.',
+  emailError: 'Please enter a valid email address.',
+  backPrompt: 'Remembered it?',
+  backLink: 'Back to login',
+  backHref: '/login',
+};
+
+export const resetPasswordContent = {
+  eyebrow: 'Reset password',
+  title: 'Set a new password',
+  intro: 'Choose a new password for your account.',
+  passwordLabel: 'New Password',
+  passwordPlaceholder: 'New Password',
+  confirmLabel: 'Confirm New Password',
+  confirmPlaceholder: 'Confirm New Password',
+  submit: 'Update password',
+  submitting: 'Updating…',
+  success: 'Password updated. You can now log in with your new password.',
+  passwordError: 'Password must be at least 8 characters.',
+  confirmRequiredError: 'Please confirm your password.',
+  confirmMatchError: 'Passwords do not match.',
+  invalidLink: 'This reset link is invalid or has expired. Please request a new one.',
+  loginPrompt: 'Ready?',
+  loginLink: 'Go to login',
+  loginHref: '/login',
 };
 
 export const signUpContent = {
@@ -30,6 +69,13 @@ export const signUpContent = {
   passwordPlaceholder: 'Password',
   confirmLabel: 'Confirm Password',
   confirmPlaceholder: 'Confirm Password',
+  roleLabel: 'I want to',
+  rolePlaceholder: 'Select account type',
+  roleOptions: [
+    { value: 'buyer', label: 'Buy products (Buyer)' },
+    { value: 'seller', label: 'Sell products (Seller)' },
+  ],
+  roleError: 'Please select your account type.',
   submit: 'Sign Up',
   footerPrompt: 'Already have an account?',
   footerLink: 'Sign In',
@@ -41,5 +87,6 @@ export const signUpContent = {
   passwordError: 'Password must be at least 8 characters.',
   confirmRequiredError: 'Please confirm your password.',
   confirmMatchError: 'Passwords do not match.',
-  confirmMessage: 'Check your email to confirm your account before signing in.',
+  confirmTitle: 'Confirm your email',
+  confirmMessage: 'We’ve emailed you a confirmation link. Open it in this browser, and you’ll be signed in. Identity verification is a separate step you’ll do later from your account.',
 };

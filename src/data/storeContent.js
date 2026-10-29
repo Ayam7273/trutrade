@@ -1,8 +1,8 @@
 export const storeHeroContent = {
   title: 'Start Selling Online in Just Minutes',
-  body: 'Create a storefront, list products with clear details and pricing, and share it with customers. Connect product orders to TruTrade’s escrow payment flow.',
-  cta: 'Create Store',
-  ctaHref: '#signup',
+  body: 'Create a Marketplace, list products with clear details and pricing, and share it with customers. Connect product orders to TruTrade’s escrow payment flow.',
+  cta: 'View Marketplace',
+  ctaHref: '/marketplace',
   image: '/assets/images/store-page-hero-img.png',
   imageAlt: 'Store dashboard showing sales details, orders, and a product catalog.',
 };

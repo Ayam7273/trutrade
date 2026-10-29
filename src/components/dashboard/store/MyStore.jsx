@@ -15,16 +15,29 @@ export default function MyStore() {
   const store = useStore();
   const { state } = useLocation();
 
+  if (store.loading) {
+    return (
+      <div className={styles.page}>
+        <PageHeader title={content.title} subtitle={content.subtitle} />
+        <p className={styles.saved} role="status">Loading your store…</p>
+      </div>
+    );
+  }
+
+  const needsSetup = !store.name;
+
   return (
     <div className={styles.page}>
       <PageHeader
         title={content.title}
         subtitle={content.subtitle}
-        action={<Button to={content.editHref} icon={ArrowRight}>{content.editCta}</Button>}
+        action={<Button to={content.editHref} icon={ArrowRight}>{needsSetup ? 'Set up your store' : content.editCta}</Button>}
       />
 
       <p className={styles.saved} role="status">
-        {state?.saved ? editStoreContent.saved : ''}
+        {needsSetup
+          ? 'Your store isn’t set up yet. Add your details and switch it on so buyers can find you.'
+          : state?.saved ? editStoreContent.saved : ''}
       </p>
 
       <div className={styles.grid}>

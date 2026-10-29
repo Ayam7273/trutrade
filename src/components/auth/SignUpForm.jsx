@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signUpContent } from '../../data/authContent';
-import { signUpWithEmail } from '../../lib/supabaseAuth';
+import { authErrorMessage, signUpWithEmail } from '../../lib/supabaseAuth';
+import Alert from '../ui/Alert.jsx';
+import PasswordField from './PasswordField.jsx';
 import styles from './SignUpForm.module.css';
 
 export default function SignUpForm() {
@@ -9,6 +11,7 @@ export default function SignUpForm() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [role, setRole] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -39,6 +42,7 @@ export default function SignUpForm() {
       nextErrors.email = signUpContent.emailError;
     }
     if (!trimmedPhone) nextErrors.phone = signUpContent.phoneError;
+    if (!role) nextErrors.role = signUpContent.roleError;
     if (password.length < 8) nextErrors.password = signUpContent.passwordError;
     if (!confirmPassword) {
       nextErrors.confirmPassword = signUpContent.confirmRequiredError;
@@ -58,9 +62,10 @@ export default function SignUpForm() {
         firstName: trimmedFirst,
         lastName: trimmedLast,
         phone: trimmedPhone,
+        role,
       });
       if (error) {
-        setFormError(error.message);
+        setFormError(authErrorMessage(error).message);
         return;
       }
       setConfirmed(true);
@@ -77,9 +82,7 @@ export default function SignUpForm() {
       <h1>{signUpContent.title}</h1>
 
       {confirmed ? (
-        <p className={styles.confirm} role="status">
-          {signUpContent.confirmMessage}
-        </p>
+        <Alert variant="success">{signUpContent.confirmMessage}</Alert>
       ) : (
       <form onSubmit={handleSubmit} noValidate>
         <div className={styles.nameRow}>
@@ -181,16 +184,42 @@ export default function SignUpForm() {
         </div>
 
         <div className={styles.field}>
+          <label htmlFor="signup-role">{signUpContent.roleLabel}</label>
+          <select
+            id="signup-role"
+            name="role"
+            value={role}
+            aria-invalid={errors.role ? 'true' : 'false'}
+            aria-describedby={errors.role ? 'signup-role-error' : undefined}
+            onChange={(event) => {
+              setRole(event.target.value);
+              clearError('role');
+            }}
+            className={styles.select}
+            required
+          >
+            <option value="" disabled>{signUpContent.rolePlaceholder}</option>
+            {signUpContent.roleOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+          {errors.role ? (
+            <p id="signup-role-error" className={styles.error} role="alert">
+              {errors.role}
+            </p>
+          ) : null}
+        </div>
+
+        <div className={styles.field}>
           <label htmlFor="signup-password">{signUpContent.passwordLabel}</label>
-          <input
+          <PasswordField
             id="signup-password"
             name="password"
-            type="password"
             autoComplete="new-password"
             placeholder={signUpContent.passwordPlaceholder}
             value={password}
-            aria-invalid={errors.password ? 'true' : 'false'}
-            aria-describedby={errors.password ? 'signup-password-error' : undefined}
+            invalid={Boolean(errors.password)}
+            describedBy={errors.password ? 'signup-password-error' : undefined}
             onChange={(event) => {
               setPassword(event.target.value);
               clearError('password');
@@ -206,15 +235,14 @@ export default function SignUpForm() {
 
         <div className={styles.field}>
           <label htmlFor="signup-confirm">{signUpContent.confirmLabel}</label>
-          <input
+          <PasswordField
             id="signup-confirm"
             name="confirmPassword"
-            type="password"
             autoComplete="new-password"
             placeholder={signUpContent.confirmPlaceholder}
             value={confirmPassword}
-            aria-invalid={errors.confirmPassword ? 'true' : 'false'}
-            aria-describedby={errors.confirmPassword ? 'signup-confirm-error' : undefined}
+            invalid={Boolean(errors.confirmPassword)}
+            describedBy={errors.confirmPassword ? 'signup-confirm-error' : undefined}
             onChange={(event) => {
               setConfirmPassword(event.target.value);
               clearError('confirmPassword');
@@ -228,11 +256,7 @@ export default function SignUpForm() {
           ) : null}
         </div>
 
-        {formError ? (
-          <p className={styles.formError} role="alert">
-            {formError}
-          </p>
-        ) : null}
+        {formError ? <Alert variant="error">{formError}</Alert> : null}
 
         <button type="submit" className={styles.submit} disabled={submitting}>
           {signUpContent.submit}

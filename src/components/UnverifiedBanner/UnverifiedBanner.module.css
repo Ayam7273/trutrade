@@ -1,0 +1,25 @@
+.banner {
+  background: var(--color-warning-bg);
+  border-bottom: 1px solid var(--color-card-border);
+  padding: 12px 24px;
+  text-align: center;
+}
+
+.text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-warning);
+  line-height: 1.5;
+}
+
+.link {
+  font-weight: 600;
+  color: var(--color-warning);
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .banner {
+    padding: 12px 16px;
+  }
+}

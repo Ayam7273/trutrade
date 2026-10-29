@@ -144,7 +144,7 @@ export default function ProductForm({ product }) {
     const added = accepted.map((file) => {
       const url = URL.createObjectURL(file);
       blobUrls.current.add(url);
-      return { id: url, url };
+      return { id: url, url, file };
     });
     setValues((current) => ({ ...current, images: [...current.images, ...added] }));
     if (problem) setErrors((current) => ({ ...current, images: content.errors[problem] }));

@@ -40,7 +40,7 @@ export default function DashboardLayout() {
   const seller = {
     ...mockSeller,
     hasUnreadNotifications: notifications.some((item) => !item.read),
-    storeName: store.name,
+    storeName: store.name || 'Your store',
     storeActive: store.active,
     avatarUrl: store.logoUrl,
   };

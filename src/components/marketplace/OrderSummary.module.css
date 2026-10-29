@@ -1,0 +1,121 @@
+.summary {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-card-border);
+  margin: 16px 0;
+}
+
+.totalRow {
+  margin-bottom: 20px;
+}
+
+.totalLabel {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.totalValue {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.checkoutBtn:hover:not(:disabled) {
+  background: var(--color-orange-hover);
+}
+
+.checkoutBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unavailableNote {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-error-text);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.continueLink {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin-bottom: 16px;
+}
+
+.continueLink:hover {
+  border-color: var(--color-teal-mid);
+}
+
+.escrowNote {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-teal-dark);
+  font-weight: 500;
+}

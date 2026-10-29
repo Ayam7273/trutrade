@@ -265,7 +265,7 @@ export const mockTransactions = buildMockTransactions();
 export const mockStorePerformance = {
   listed: { value: 42, target: 68 },
   sold: { value: 156, target: 190 },
-  averageOrder: { amount: 29167, currency: 'NGN', target: 43000 },
+  averageOrder: { amount: 29167, currency: 'GBP', target: 43000 },
   rating: { value: 4.8 },
 };
 

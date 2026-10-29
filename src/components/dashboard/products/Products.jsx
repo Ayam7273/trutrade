@@ -5,11 +5,12 @@ import Button from '../../ui/Button.jsx';
 import ProductStats from './ProductStats.jsx';
 import ProductsList from './ProductsList.jsx';
 import { productsPageContent as content } from '../../../data/dashboardContent';
-import { useProducts } from '../../../lib/productsApi';
+import { useProducts, useProductsStatus } from '../../../lib/productsApi';
 import styles from './Products.module.css';
 
 export default function Products() {
   const products = useProducts();
+  const status = useProductsStatus();
   const { state } = useLocation();
 
   return (
@@ -21,7 +22,7 @@ export default function Products() {
       />
       <p className={styles.saved} role="status">{state?.saved ?? ''}</p>
       <ProductStats products={products} />
-      <ProductsList products={products} />
+      <ProductsList products={products} status={status} />
     </div>
   );
 }

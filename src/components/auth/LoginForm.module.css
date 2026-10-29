@@ -59,7 +59,7 @@
   color: var(--color-text-dark);
 }
 
-.field input {
+.field > input {
   width: 100%;
   border: 0;
   border-radius: var(--radius-md);
@@ -70,7 +70,7 @@
   line-height: 1.4;
 }
 
-.field input::placeholder {
+.field > input::placeholder {
   color: var(--color-input-placeholder);
 }
 
@@ -84,6 +84,22 @@
 
 .formError {
   margin-bottom: 12px;
+}
+
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin: -4px 0 16px;
+}
+
+.forgot {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-teal-dark);
+}
+
+.forgot:hover {
+  text-decoration: underline;
 }
 
 .submit {

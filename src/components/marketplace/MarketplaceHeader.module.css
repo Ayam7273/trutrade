@@ -1,0 +1,379 @@
+.spacer {
+  height: 76px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 12px 24px 0;
+  background: var(--color-bg-light);
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 10px 16px 10px 20px;
+  display: grid;
+  grid-template-columns: auto minmax(160px, 280px) 1fr auto;
+  align-items: center;
+  gap: 14px;
+  border: 2px solid var(--color-border-navbar);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card);
+  background: var(--color-bg-light);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 30px;
+  width: auto;
+}
+
+.searchForm {
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-pill);
+  background: var(--color-input-bg);
+  color: var(--color-text-dark);
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--color-input-placeholder);
+}
+
+.searchInput:focus {
+  border-color: var(--color-teal-mid);
+}
+
+/* ----- right-side actions ----- */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.merchantLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+}
+
+.merchantLink:hover {
+  color: var(--color-orange);
+}
+
+.cartBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-dark);
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.cartBtn:hover {
+  color: var(--color-orange);
+}
+
+.badge {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- profile ----- */
+
+.profileWrap {
+  position: relative;
+}
+
+.profileBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px 6px 6px;
+  cursor: pointer;
+  color: var(--color-text-dark);
+  max-width: 160px;
+}
+
+.profileBtn:hover {
+  border-color: var(--color-teal-mid);
+}
+
+.profileInitials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-pill);
+  background: var(--color-teal-dark);
+  color: var(--color-text-inverse);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+}
+
+.profileName {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+  transition: transform 0.15s ease;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  z-index: 200;
+  overflow: hidden;
+}
+
+.dropdownHeader {
+  padding: 14px 16px 10px;
+}
+
+.dropdownName {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdownEmail {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: var(--color-card-border);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 11px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.dropdownItem:hover {
+  background: var(--color-bg-offwhite);
+  color: var(--color-teal-dark);
+}
+
+.dropdownSignOut {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 11px 16px;
+  background: transparent;
+  border: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-error-text);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dropdownSignOut:hover {
+  background: var(--color-error-bg);
+}
+
+.signInBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.signInBtn:hover {
+  background: var(--color-orange-hover);
+}
+
+/* ----- hamburger ----- */
+
+.menuBtn {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--color-text-dark);
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ----- mobile nav ----- */
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: var(--container-max);
+  margin: 8px auto 0;
+  padding: 12px 20px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-light);
+  box-shadow: 0 12px 32px rgba(20, 24, 30, 0.08);
+}
+
+.mobileSearch {
+  margin-bottom: 8px;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.mobileLink:hover {
+  color: var(--color-orange);
+}
+
+.mobileDivider {
+  height: 1px;
+  background: var(--color-card-border);
+  margin: 8px 0;
+}
+
+.mobileMerchant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.mobileMerchant:hover {
+  background: var(--color-orange-hover);
+}
+
+.mobileSignOut {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-error-text);
+  cursor: pointer;
+}
+
+/* ----- responsive ----- */
+
+@media (max-width: 900px) {
+  .merchantLink {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .spacer {
+    height: 64px;
+  }
+
+  .header {
+    padding: 10px 16px 0;
+  }
+
+  .inner {
+    grid-template-columns: auto 1fr auto auto;
+    gap: 10px;
+  }
+
+  .searchForm {
+    display: none;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .profileName {
+    display: none;
+  }
+
+  .menuBtn {
+    display: inline-flex;
+  }
+}

@@ -1,0 +1,76 @@
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.action {
+  margin-top: 8px;
+}
+
+.action button,
+.action a {
+  font-size: 14px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.action button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.close {
+  flex-shrink: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 0;
+  line-height: 0;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.error {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+.success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.info {
+  background: var(--color-info-bg);
+  color: var(--color-info);
+}

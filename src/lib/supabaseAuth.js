@@ -21,19 +21,113 @@ import { requireSupabase } from './supabaseClient';
  * Supabase sends a confirmation email by default - surface that to the
  * user in the calling component rather than assuming an instant session.
  */
-export async function signUpWithEmail({ email, password, firstName, lastName, phone }) {
+/**
+ * Supabase returns a user with an empty identities array when the email is
+ * already registered, and it does not set `error` (that hides which emails
+ * exist). Treat that as "already registered" so the form does not tell the
+ * person to confirm an account that was never created.
+ */
+export function signUpOutcome(data, error) {
+  if (error) return { data, error };
+  const identities = data?.user?.identities;
+  if (data?.user && Array.isArray(identities) && identities.length === 0) {
+    return {
+      data,
+      error: {
+        code: 'user_already_exists',
+        message: 'An account with this email already exists. Sign in with that password, or use a different email. One email can only be a buyer or a seller, not both.',
+      },
+    };
+  }
+  return { data, error: null };
+}
+
+/**
+ * Buyer or seller chosen at signup. Stored as account_type, not role:
+ * a metadata key named role is easy to confuse with the JWT role, and the
+ * old signup trigger inserted a store only when it saw role = seller, which
+ * rolled back the whole account when the store insert failed.
+ */
+export function accountTypeFromUser(user) {
+  const meta = user?.user_metadata ?? {};
+  const value = meta.account_type || meta.role;
+  return value === 'buyer' || value === 'seller' ? value : null;
+}
+
+export async function signUpWithEmail({ email, password, firstName, lastName, phone, role }) {
+  const accountType = role === 'buyer' || role === 'seller' ? role : null;
   const { data, error } = await requireSupabase().auth.signUp({
     email,
     password,
     options: {
+      // Where the confirmation link returns the user after they click it.
+      emailRedirectTo: `${window.location.origin}/login`,
       data: {
         first_name: firstName,
         last_name: lastName,
         phone,
+        ...(accountType ? { account_type: accountType } : {}),
       },
     },
   });
-  return { data, error };
+  return signUpOutcome(data, error);
+}
+
+/**
+ * Re-sends the signup confirmation email (for users who never received or lost
+ * the original). Harmless if the account is already confirmed.
+ */
+export async function resendConfirmation(email) {
+  const { error } = await requireSupabase().auth.resend({
+    type: 'signup',
+    email,
+    options: { emailRedirectTo: `${window.location.origin}/login` },
+  });
+  return { error };
+}
+
+/**
+ * Sends a password-reset email. The link returns the user to /reset-password,
+ * where a temporary recovery session lets them set a new password.
+ */
+export async function sendPasswordReset(email) {
+  const { error } = await requireSupabase().auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/reset-password`,
+  });
+  return { error };
+}
+
+/**
+ * Updates the signed-in (or recovery-session) user's password.
+ */
+export async function updatePassword(newPassword) {
+  const { error } = await requireSupabase().auth.updateUser({ password: newPassword });
+  return { error };
+}
+
+/**
+ * Maps common Supabase auth errors to friendly copy. Returns `needsConfirm`
+ * when the failure is an unconfirmed email so the UI can offer a resend.
+ */
+export function authErrorMessage(error) {
+  const raw = (error?.message || '').toLowerCase();
+  const code = error?.code || '';
+  if (code === 'email_not_confirmed' || raw.includes('not confirmed')) {
+    return {
+      message: 'Please confirm your email first. Check your inbox for the confirmation link we sent when you signed up.',
+      needsConfirm: true,
+    };
+  }
+  if (code === 'invalid_credentials' || raw.includes('invalid login')) {
+    return {
+      message: "We couldn't sign you in. Use the password for this email, and open the confirmation link if you just signed up. A buyer and a seller cannot share one email — the seller account needs its own email address.",
+      needsConfirm: true,
+    };
+  }
+  if (raw.includes('rate limit') || code === 'over_email_send_rate_limit') {
+    return { message: 'Too many attempts. Please wait a minute and try again.', needsConfirm: false };
+  }
+  return { message: error?.message || 'Something went wrong. Please try again.', needsConfirm: false };
 }
 
 /**
@@ -48,26 +142,15 @@ export async function signInWithEmail({ email, password }) {
 }
 
 /**
- * Signs in, then checks verification status. If the user isn't verified,
- * signs them back out immediately and returns a specific error so the
- * Login page can show "please verify your account" rather than a
- * generic auth failure.
+ * Signs in an existing user and returns their profile regardless of
+ * verification status. The caller is responsible for redirecting to /verify
+ * if the user is not yet verified.
  */
 export async function signInAndCheckVerification({ email, password }) {
   const { data, error } = await signInWithEmail({ email, password });
   if (error) return { data: null, profile: null, error };
 
   const { profile } = await getMyProfile();
-
-  if (!profile || profile.verification_status !== 'verified') {
-    await signOut();
-    return {
-      data: null,
-      profile: null,
-      error: { message: 'Please verify your account before logging in.' },
-    };
-  }
-
   return { data, profile, error: null };
 }
 

@@ -1,0 +1,148 @@
+.row {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-card-border);
+  position: relative;
+}
+
+.unavailable {
+  opacity: 0.6;
+}
+
+.imgWrap {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-surface);
+}
+
+.info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.name {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+}
+
+.soldBy,
+.type {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.unitPrice {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-top: 4px;
+}
+
+.variations {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.unavailableTag {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.removeBtn {
+  background: transparent;
+  border: 0;
+  color: var(--color-text-muted);
+  padding: 4px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.removeBtn:hover {
+  color: var(--color-error-text);
+  background: var(--color-error-bg);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.stepBtn {
+  width: 34px;
+  height: 34px;
+  background: var(--color-bg-light);
+  border: 0;
+  color: var(--color-text-dark);
+  font-size: 18px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stepBtn:hover {
+  background: var(--color-surface);
+}
+
+.qty {
+  min-width: 34px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  padding: 0 6px;
+}
+
+.lineTotal {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-teal-dark);
+}

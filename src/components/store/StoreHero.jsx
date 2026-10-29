@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { storeHeroContent } from '../../data/storeContent';
 import styles from './StoreHero.module.css';
 
@@ -7,9 +8,9 @@ export default function StoreHero() {
       <div className={styles.inner}>
         <h1 id="store-hero-heading">{storeHeroContent.title}</h1>
         <p className={styles.subtext}>{storeHeroContent.body}</p>
-        <a href={storeHeroContent.ctaHref} className={styles.cta}>
+        <Link to={storeHeroContent.ctaHref} className={styles.cta}>
           {storeHeroContent.cta}
-        </a>
+        </Link>
         <div className={styles.frame}>
           <img src={storeHeroContent.image} alt={storeHeroContent.imageAlt} />
         </div>

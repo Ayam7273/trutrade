@@ -59,10 +59,13 @@ export default function EditStore() {
   const [formError, setFormError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  // Object URLs for picked images. Revoked on leave unless they were saved.
-  // Once Supabase Storage is wired up, upload the files on save instead.
+  // Object URLs for picked images (previews). The actual File objects are kept
+  // in refs so saveStore can upload them to Supabase Storage.
   const blobUrls = useRef(new Set());
   const keptUrls = useRef(new Set());
+  const logoFile = useRef(null);
+  const bannerFile = useRef(null);
+  const hydrated = useRef(false);
 
   useEffect(() => {
     const created = blobUrls.current;
@@ -73,6 +76,23 @@ export default function EditStore() {
       });
     };
   }, []);
+
+  // The store loads asynchronously; fill the form once (and only once) it has.
+  useEffect(() => {
+    if (store.loading || hydrated.current) return;
+    hydrated.current = true;
+    setValues({
+      name: store.name,
+      category: store.category,
+      description: store.description,
+      email: store.email,
+      phone: store.phone,
+      location: store.location,
+      active: store.active,
+      logoUrl: store.logoUrl,
+      bannerUrl: store.bannerUrl,
+    });
+  }, [store]);
 
   function clearError(field) {
     setErrors((current) => {
@@ -96,11 +116,13 @@ export default function EditStore() {
     }
     const url = URL.createObjectURL(file);
     blobUrls.current.add(url);
+    (kind === 'logo' ? logoFile : bannerFile).current = file;
     setField(`${kind}Url`, url);
     clearError(kind);
   }
 
   function handleRemove(kind) {
+    (kind === 'logo' ? logoFile : bannerFile).current = null;
     setField(`${kind}Url`, null);
     clearError(kind);
   }
@@ -120,14 +142,17 @@ export default function EditStore() {
     setFormError('');
     setSubmitting(true);
     try {
-      const { error } = await saveStore({
-        ...values,
-        name: values.name.trim(),
-        description: values.description.trim(),
-        email: values.email.trim(),
-        phone: values.phone.trim(),
-        location: values.location.trim(),
-      });
+      const { error } = await saveStore(
+        {
+          ...values,
+          name: values.name.trim(),
+          description: values.description.trim(),
+          email: values.email.trim(),
+          phone: values.phone.trim(),
+          location: values.location.trim(),
+        },
+        { logoFile: logoFile.current, bannerFile: bannerFile.current },
+      );
       if (error) throw error;
       keptUrls.current.add(values.logoUrl);
       keptUrls.current.add(values.bannerUrl);

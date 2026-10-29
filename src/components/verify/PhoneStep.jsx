@@ -1,19 +1,13 @@
 import { useRef, useState } from 'react';
 import { requireSupabase } from '../../lib/supabaseClient';
-import { sendCodeErrorMessage, toE164 } from '../../lib/phone';
+import { toE164 } from '../../lib/phone';
+import { useAuth } from '../../contexts/AuthContext';
 import styles from './PhoneStep.module.css';
 
-function fromE164(e164) {
-  if (typeof e164 !== 'string') return null;
-  if (/^\+234\d{10}$/.test(e164)) return { dial: '+234', national: e164.slice(4) };
-  if (/^\+44\d{10}$/.test(e164)) return { dial: '+44', national: e164.slice(3) };
-  return null;
-}
-
-export default function PhoneStep({ country, initialE164 = '', onSent }) {
-  const restored = fromE164(initialE164);
-  const [dialCode, setDialCode] = useState(restored?.dial ?? (country === 'NG' ? '+234' : '+44'));
-  const [national, setNational] = useState(restored?.national ?? '');
+export default function PhoneStep({ country }) {
+  const { session, refreshProfile } = useAuth();
+  const [dialCode, setDialCode] = useState(country === 'NG' ? '+234' : '+44');
+  const [national, setNational] = useState('');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const submittingRef = useRef(false);
@@ -35,14 +29,17 @@ export default function PhoneStep({ country, initialE164 = '', onSent }) {
     setSubmitting(true);
     try {
       const supabase = requireSupabase();
-      const { error: sendError } = await supabase.auth.updateUser({ phone: e164 });
-      if (sendError) {
-        setError(sendCodeErrorMessage(sendError));
+      const { error: saveError } = await supabase
+        .from('profiles')
+        .update({ phone: e164 })
+        .eq('id', session.user.id);
+      if (saveError) {
+        setError("We couldn't save your number. Please try again.");
         return;
       }
-      onSent(e164);
+      await refreshProfile();
     } catch {
-      setError("We couldn't send a code. Please try again.");
+      setError("We couldn't save your number. Please try again.");
     } finally {
       submittingRef.current = false;
       setSubmitting(false);
@@ -53,7 +50,7 @@ export default function PhoneStep({ country, initialE164 = '', onSent }) {
     <form onSubmit={handleSubmit} onKeyDown={handleFormKeyDown}>
       <h1 className={styles.heading}>What&apos;s your mobile number?</h1>
       <p className={styles.lede}>
-        We&apos;ll text a 6-digit code to confirm it&apos;s yours.
+        We&apos;ll use this to contact you about your orders.
       </p>
 
       <div className={styles.phoneRow}>
@@ -109,7 +106,7 @@ export default function PhoneStep({ country, initialE164 = '', onSent }) {
         className={styles.continue}
         disabled={!e164 || submitting}
       >
-        {submitting ? 'Sending…' : 'Send code'}
+        {submitting ? 'Saving…' : 'Continue'}
       </button>
     </form>
   );

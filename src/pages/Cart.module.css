@@ -1,0 +1,108 @@
+.page {
+  padding-bottom: 80px;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-muted);
+  margin-top: 6px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  align-items: start;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.group {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.group:last-child {
+  margin-bottom: 0;
+}
+
+.storeName {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  padding: 20px 0 4px;
+  color: var(--color-text-dark);
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.sidebar {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shopLink {
+  display: inline-flex;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  background: var(--color-orange);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.shopLink:hover {
+  background: var(--color-orange-hover);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .group {
+    padding: 0 16px;
+  }
+}

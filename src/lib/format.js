@@ -5,13 +5,16 @@ const LOCALE_FOR_CURRENCY = {
 };
 
 /**
- * Formats a whole-unit amount in the given currency, e.g. 2450 GBP -> "£2,450".
+ * Formats an amount in the given currency. Whole amounts show no pence; decimal amounts show 2 decimal places.
+ * e.g. 2450 GBP -> "£2,450", 12.5 GBP -> "£12.50"
  */
 export function formatMoney(amount, currency) {
+  const fractionDigits = Number.isInteger(amount) ? 0 : 2;
   return new Intl.NumberFormat(LOCALE_FOR_CURRENCY[currency] ?? 'en-GB', {
     style: 'currency',
     currency,
-    maximumFractionDigits: 0,
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
   }).format(amount);
 }
 
